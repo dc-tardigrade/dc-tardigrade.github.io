@@ -19,7 +19,9 @@ export default {
 <style lang="scss">
 
 // Vars
-$primary: #FF5555;
+:root {
+  --primary: #FF5555 !important;
+}
 
 // Root and containers styles
 #app {

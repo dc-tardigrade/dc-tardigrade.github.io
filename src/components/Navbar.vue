@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 
 .navbar {
-  background: #FF5555;
+  background: var(--primary);
   color: #fff;
   padding: 20px 0;
 
@@ -44,7 +44,7 @@ export default {
   }
 
   &__btn {
-    color: #FF5555;
+    color: var(--primary);
     background: #fff;
     padding: 10px 15px;
     text-decoration: none;
