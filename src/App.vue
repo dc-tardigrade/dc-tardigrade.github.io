@@ -2,16 +2,19 @@
   <div id="app">
     <Navbar></Navbar>
     <router-view/>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    Footer
   }
 }
 </script>
@@ -32,5 +35,6 @@ export default {
 
 body {
   margin: 0;
+  background-color: #FFF5F5 !important;
 }
 </style>
