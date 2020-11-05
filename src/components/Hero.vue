@@ -1,16 +1,18 @@
 <template>
-  <div class="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-xs-12 col-sm-6">
-          <h1 class="h1 hero__title">Bénéficiez d'une
-            <span>aide de 1500€</span>
-          </h1>
-          <div class="hero__subtitle">Grâce au Chèque Numérique pour financer votre futur site web</div>
-          <a class="btn btn-primary hero__btn" href="#">Tester mon éligibilité</a>
-        </div>
-        <div class="d-none d-sm-block col-sm-6">
-          <img class="img-responsive" src="/img/hero-illustration.svg" alt="">
+  <div class="container">
+    <div class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xs-12 col-sm-6">
+            <h1 class="h1 hero__title">Bénéficiez d'une
+              <span>aide de 1500€</span>
+            </h1>
+            <div class="hero__subtitle">Grâce au Chèque Numérique pour financer votre futur site web</div>
+            <a class="btn btn-primary hero__btn" href="#">Tester mon éligibilité</a>
+          </div>
+          <div class="d-none d-sm-block col-sm-6">
+            <img class="img-responsive" src="/img/hero-illustration.svg" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -45,7 +47,7 @@
     font-size: 14px;
     background: var(--primary);
 
-    :hover {
+    &:hover {
       background: #fff;
       color: var(--primary) !important;
       border-color: transparent !important;
