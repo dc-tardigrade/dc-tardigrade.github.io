@@ -7,7 +7,7 @@
             <span>aide de 1500€</span>
           </h1>
           <div class="hero__subtitle">Grâce au Chèque Numérique pour financer votre futur site web</div>
-          <a class="btn btn-primary hero__btn" href="#">Tester mon éligibilité</a>
+          <Button type="primary" href="/">Tester mon éligilité</Button>
         </div>
         <div class="d-none d-sm-block col-sm-6">
           <img class="img-responsive" src="/img/hero-illustration.svg" alt="">
@@ -18,7 +18,14 @@
 </template>
 
 <script>
+  import Button from '@/components/Button';
 
+  export default {
+    name: 'Hero',
+    components: {
+      Button
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

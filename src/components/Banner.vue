@@ -5,14 +5,18 @@
       <div class="banner__subtitle">
         Remplissez ce formulaire pour tester vote éligibilité au Chèque Numérique
       </div>
-      <a class="btn banner__btn" href="#">Tester mon éligibilité</a>
+      <Button class="mt-3" type="white" href="/">Tester mon éligilité</Button>
     </div>
   </div>
 </template>
 
 <script>
+  import Button from '@/components/Button'
   export default {
-    name: 'Banner'
+    name: 'Banner',
+    components: {
+      Button
+    }
   }
 </script>
 
@@ -26,21 +30,6 @@
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 10px;
-  }
-
-  &__btn {
-    margin-top: 15px;
-    background: #fff;
-    color: var(--primary);
-    font-weight: bold;
-    filter: drop-shadow(0px 0px 12px rgba(255, 255, 255, 0.4));
-    border: 2px solid #fff;
-
-    &:hover {
-      background: var(--primary);
-      border: 2px solid #fff;
-      color: #fff;
-    }
   }
 }
 </style>
