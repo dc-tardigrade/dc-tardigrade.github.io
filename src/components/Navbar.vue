@@ -1,13 +1,16 @@
 <template>
   <div class="navbar">
-    <div class="navbar__brand">
-      Chèque Numérique
-    </div>
-    <div class="navbar__nav">
-      <router-link class="navbar__link" to="/"></router-link>
-      <router-link class="navbar__btn" to="/contact">Contact</router-link>
+    <div class="container">
+      <div class="navbar__brand">
+        Chèque Numérique
+      </div>
+      <div class="navbar__nav">
+        <router-link class="navbar__link" to="/">Accueil</router-link>
+        <router-link class="navbar__btn" to="/contact">Contact</router-link>
+      </div>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -20,24 +23,31 @@ export default {
 .navbar {
   background: #FF5555;
   color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 20px 0;
 
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__brand {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
   }
 
   &__link {
+    font-size: 16px;
     color: #fff;
+    text-decoration: none;
+    margin-right: 8px;
   }
 
   &__btn {
     color: #FF5555;
     background: #fff;
     padding: 10px 15px;
+    text-decoration: none;
   }
 }
 
