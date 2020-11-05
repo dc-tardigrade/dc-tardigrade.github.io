@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div class="hero">
-      <div class="container">
         <div class="row align-items-center">
           <div class="col-xs-12 col-sm-6">
             <h1 class="h1 hero__title">Bénéficiez d'une
@@ -15,7 +14,6 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
