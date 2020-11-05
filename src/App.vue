@@ -37,4 +37,12 @@ body {
   margin: 0;
   background-color: #FFF5F5 !important;
 }
+
+h1, .h1, .h1 span, h2, .h2, h3, .h3 {
+  font-family: "Dosis", sans-serif;
+}
+
+p, div, span, li, a {
+  font-family: "Open Sans", sans-serif;
+}
 </style>
