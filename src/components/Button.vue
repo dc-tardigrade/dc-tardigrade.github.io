@@ -1,6 +1,6 @@
 <template>
   <button :click="trigger" :class="className">
-    Tester mon éligibilité
+    Découvrir
   </button>
 </template>
 
