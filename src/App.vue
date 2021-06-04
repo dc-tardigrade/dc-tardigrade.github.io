@@ -23,8 +23,10 @@ export default {
 
 // Vars
 :root {
-  --primary: #FF5555 !important;
+  --primary: #90A867 !important;
 }
+
+$primary:  #90A867;
 
 // Root and containers styles
 #app {

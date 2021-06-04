@@ -1,11 +1,11 @@
 <template>
   <div class="banner py-5 align-items-stretch">
-    <h2 class="h2 banner__title">Mon entreprise est-elle éligible?</h2>
+    <h2 class="h2 banner__title">Ça m'intéresse</h2>
     <div class="banner__content align-items-stretch">
       <div class="banner__subtitle">
-        Remplissez ce formulaire pour tester vote éligibilité au Chèque Numérique
+        Rejoindre une communauté de survivalistes
       </div>
-      <Button class="mt-3" type="white" href="/">Tester mon éligilité</Button>
+      <Button class="mt-3" type="white" href="/">S'inscrire</Button>
     </div>
   </div>
 </template>

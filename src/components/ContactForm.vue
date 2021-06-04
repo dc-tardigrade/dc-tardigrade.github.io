@@ -18,7 +18,7 @@
           <input type="email" class="form-control mb-2" placeholder="Adresse e-mail" name="email"/>
           <input type="text" class="form-control mb-2" placeholder="L'objet de votre message" name="subject"/>
           <textarea name="message" class="form-control" rows="6" placeholder="Posez votre question !"></textarea>
-          <button type="submit" class="btn btn-primary btn-block mb-2 font-weight-bold">Envoyer</button>
+          <button type="submit" class="btn btn-block mb-2 font-weight-bold">Envoyer</button>
         </form>
       </div>
     </div>
@@ -38,6 +38,17 @@
   }
   .form-control {
     border: none;
+  }
+}
+.btn {
+  margin-top: 1rem;
+  border: 1px solid var(--primary);
+  outline-color: var(--primary);
+  color: var(--primary);
+
+  &:hover {
+    background: var(--primary);
+    color: #fff;
   }
 }
 </style>

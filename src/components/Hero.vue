@@ -3,14 +3,12 @@
     <div class="hero">
       <div class="row align-items-center">
         <div class="col-xs-12 col-sm-6">
-          <h1 class="h1 hero__title">Bénéficiez d'une
-            <span>aide de 1500€</span>
-          </h1>
-          <div class="hero__subtitle">Grâce au Chèque Numérique pour financer votre futur site web</div>
-          <Button type="primary" href="/">Tester mon éligilité</Button>
+          <h1 class="h1 hero__title">Découvrez le survivalisme comme jamais auparavant</h1>
+          <div class="hero__subtitle">la plateforme dediée à l’entraide survivaliste</div>
+          <Button type="primary" href="/"></Button>
         </div>
         <div class="d-none d-sm-block col-sm-6">
-          <img class="img-responsive" src="/img/hero-illustration.svg" alt="">
+          <img class="img-responsive" src="/img/welcome.png" alt="">
         </div>
       </div>
     </div>
@@ -53,7 +51,6 @@
 
   &__btn {
     color: #fff !important;
-    box-shadow: 0 0 12px rgba(255, 85, 85, 0.4);
     font-weight: bold;
     font-size: 14px;
     background: var(--primary);

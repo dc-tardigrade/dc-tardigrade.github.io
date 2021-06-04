@@ -36,6 +36,12 @@ export default {
     font-weight: bold;
   }
 
+  &__nav {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
   &__link {
     font-size: 16px;
     color: #fff;

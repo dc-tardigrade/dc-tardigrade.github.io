@@ -3,38 +3,34 @@
     <div class="checkerboard">
       <div class="row align-items-center my-5">
         <div class="d-none d-sm-block col-sm-6">
-          <img class="img-responsive" src="img/checkerboard-illustration-1.svg" alt="">
+          <img class="img-responsive" src="img/about.png" alt="">
         </div>
         <div class="col-xs-12 offset-sm-1 col-sm-5">
-          <img class="checkerboard__icon" src="icons/checkerboard-icon-1.svg"/>
-          <h2 class="h2 checkerboard__title">Qui peut en bénéficier ?</h2>
-          <p class="checkerboard__text">Les commerçants ou les artisans, avec ou sans point de vente,
-            sédentaires ou itinérants (hors franchisés), inscrits au Registre du Commerce ou au Registre des
-            Métiers:
+          <!--          <img class="checkerboard__icon" src="icons/checkerboard-icon-1.svg"/>-->
+          <h2 class="h2 checkerboard__title">Pourquoi et pour qui ?</h2>
+          <p class="checkerboard__text">La plateforme dediée à l’entraide survivaliste vous aide à trouver une
+            communauté de survivalisme solidaire et vous permets de partager vos astuces et conseils po
           </p>
-          <ul class="checkerboard__list">
-            <li>Ayant leur établissement en Île-De-France</li>
-            <li>Avec un effectif inférieur à 10 salariés, y compris les entreprises sans salariés</li>
-          </ul>
         </div>
       </div>
       <div class="row align-items-center my-5">
         <div class="col-sm-5">
-          <img class="checkerboard__icon" src="/icons/checkerboard-icon-2.svg"/>
-          <h2 class="h2 checkerboard__title">Pour financer quoi ?</h2>
-          <p class="checkerboard__text">Tout investissement engagé pour l'étude, la réalisation, l'acquisition
-            ou le développement d'un site internet
+          <!--          <img class="checkerboard__icon" src="/icons/checkerboard-icon-2.svg"/>-->
+          <h2 class="h2 checkerboard__title">Qui sont les survivalistes ?</h2>
+          <p class="checkerboard__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet aut
+            corporis doloremque enim, laudantium nobis nulla provident quasi qui quo, sint sit, voluptas voluptates
+            voluptatum. Accusantium id in recusandae.a
           </p>
-          <ul class="checkerboard__list">
-            <li>Réservation du nom de domaine, frais d'hébergement</li>
-            <li>
-              Outils de vente en ligne (plateforme, marketplace, click and collect, etc.), frais de
-              formation
-            </li>
-          </ul>
+<!--          <ul class="checkerboard__list">-->
+<!--            <li>Réservation du nom de domaine, frais d'hébergement</li>-->
+<!--            <li>-->
+<!--              Outils de vente en ligne (plateforme, marketplace, click and collect, etc.), frais de-->
+<!--              formation-->
+<!--            </li>-->
+<!--          </ul>-->
         </div>
         <div class="d-none d-sm-block col-sm-6">
-          <img class="img-responsive" src="/img/checkerboard-illustration-2.svg" alt="">
+          <img class="img-responsive" src="/img/whositfor.png" alt="">
         </div>
       </div>
     </div>
