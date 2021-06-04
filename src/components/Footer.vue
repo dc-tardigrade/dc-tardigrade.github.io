@@ -1,6 +1,6 @@
 <template>
   <footer class="footer py-4 mt-5">
-    Copyright © 2020 <a href="https://redcat-studio.fr">Redcat Studio</a>
+    Copyright © 2021 <a href="https://redcat-studio.fr">Tardigrade</a>
 
   </footer>
 </template>
