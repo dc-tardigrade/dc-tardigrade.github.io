@@ -4,26 +4,41 @@
       <div class="row align-items-center">
         <div class="col-xs-12 col-sm-6">
           <h1 class="h1 hero__title">Découvrez le survivalisme comme jamais auparavant</h1>
-          <div class="hero__subtitle">la plateforme dediée à l’entraide survivaliste</div>
-          <Button type="primary" href="/"></Button>
+          <div class="hero__subtitle">la plateforme dédiée à l’entraide survivaliste</div>
+          <Button type="primary" href="/">Découvrir</Button>
         </div>
         <div class="d-none d-sm-block col-sm-6">
-          <img class="img-responsive" src="/img/welcome.png" alt="">
+          <img class="img-fluid" src="/img/welcome.png" alt="">
         </div>
+        <ul class="test" v-for="(post, index) in posts" :key="index">
+          <li>post.name</li>
+        </ul>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import Button from '@/components/Button';
+import Button from '@/components/Button'
+import axios from 'axios'
 
-  export default {
-    name: 'Hero',
-    components: {
-      Button
+export default {
+  name: 'Hero',
+  components: {
+    Button
+  },
+  data() {
+    return {
+      name: 'Brieuc',
+      posts: axios.get('http://localhost:8765/api/posts', {
+        // method: 'GET',
+        // headers: {
+        //   'Content-Type': 'application/json'
+        // }
+      })
     }
-  }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

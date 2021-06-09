@@ -1,6 +1,6 @@
 <template>
   <button :click="trigger" :class="className">
-    Découvrir
+    <slot></slot>
   </button>
 </template>
 
@@ -34,7 +34,7 @@ export default {
 <style lang="scss" scoped>
 .btn {
   background: var(--primary);
-  box-shadow: 0 0 12px rgba(255, 85, 85, 0.4);
+  box-shadow: 0 0 12px rgba(144, 168, 103, 0.4);
   font-weight: bold;
   font-size: 14px;
 

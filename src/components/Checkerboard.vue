@@ -3,9 +3,9 @@
     <div class="checkerboard">
       <div class="row align-items-center my-5">
         <div class="d-none d-sm-block col-sm-6">
-          <img class="img-responsive" src="img/about.png" alt="">
+          <img class="img-fluid" src="img/about.png" alt="">
         </div>
-        <div class="col-xs-12 offset-sm-1 col-sm-5">
+        <div class="col-xs-12 col-sm-6">
           <!--          <img class="checkerboard__icon" src="icons/checkerboard-icon-1.svg"/>-->
           <h2 class="h2 checkerboard__title">Pourquoi et pour qui ?</h2>
           <p class="checkerboard__text">La plateforme dediée à l’entraide survivaliste vous aide à trouver une
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="row align-items-center my-5">
-        <div class="col-sm-5">
+        <div class="col-sm-6">
           <!--          <img class="checkerboard__icon" src="/icons/checkerboard-icon-2.svg"/>-->
           <h2 class="h2 checkerboard__title">Qui sont les survivalistes ?</h2>
           <p class="checkerboard__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet aut
@@ -30,7 +30,7 @@
 <!--          </ul>-->
         </div>
         <div class="d-none d-sm-block col-sm-6">
-          <img class="img-responsive" src="/img/whositfor.png" alt="">
+          <img class="img-fluid" src="/img/whositfor.png" alt="">
         </div>
       </div>
     </div>

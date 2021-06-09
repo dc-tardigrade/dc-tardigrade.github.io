@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="container">
       <div class="navbar__brand">
-        Chèque Numérique
+        Nomad
       </div>
       <div class="navbar__nav">
         <router-link class="navbar__link" to="/">Accueil</router-link>
