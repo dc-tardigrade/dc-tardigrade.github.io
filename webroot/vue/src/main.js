@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
 import axios from 'axios'
-import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
 import VueYoutube from 'vue-youtube'
 import router from './router'
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-
-Vue.use(BootstrapVue)
+Vue.use(Buefy)
 Vue.use(VueYoutube)
 
 window.axios = axios

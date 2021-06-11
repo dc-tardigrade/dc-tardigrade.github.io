@@ -1,16 +1,32 @@
 <template>
-  <div class="navbar">
-    <div class="container">
-      <div class="navbar__brand">
-        Nomad
-      </div>
-      <div class="navbar__nav">
-        <router-link class="navbar__link" to="/">Accueil</router-link>
-        <router-link class="navbar__btn" to="/contact">Contact</router-link>
-      </div>
-    </div>
-  </div>
-
+  <b-navbar class="is-white py-2">
+      <template #brand>
+        <b-navbar-item tag="router-link" to="/">
+          Nomad
+        </b-navbar-item>
+      </template>
+      <template #start>
+        <b-navbar-item tag="router-link" to="/">
+          Accueil
+        </b-navbar-item>
+        <b-navbar-item tag="router-link" to="/">
+          Nos stages
+        </b-navbar-item>
+        <b-navbar-item tag="router-link" to="/">
+          Contact
+        </b-navbar-item>
+      </template>
+      <template #end>
+        <div class="buttons">
+          <b-navbar-item class="button" tag="router-link" to="/">
+            Connexion
+          </b-navbar-item>
+          <b-navbar-item class="button is-primary" tag="router-link" to="/">
+            Inscription
+          </b-navbar-item>
+        </div>
+      </template>
+  </b-navbar>
 </template>
 
 <script>
@@ -19,42 +35,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
-.navbar {
-  background: var(--primary);
-  color: #fff;
-  padding: 20px 0;
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__brand {
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  &__nav {
-    display: flex;
-    align-items: center;
-    column-gap: 1rem;
-  }
-
-  &__link {
-    font-size: 16px;
-    color: #fff;
-    text-decoration: none;
-    margin-right: 8px;
-  }
-
-  &__btn {
-    color: var(--primary);
-    background: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-  }
-}
 
 </style>

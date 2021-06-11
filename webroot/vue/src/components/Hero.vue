@@ -1,32 +1,26 @@
 <template>
-  <div class="container">
-    <div class="hero">
-      <div class="row align-items-center">
-        <div class="col-xs-12 col-sm-6">
-          <h1 class="h1 hero__title">Découvrez le survivalisme comme jamais auparavant</h1>
-          <div class="hero__subtitle">la plateforme dédiée à l’entraide survivaliste</div>
-          <Button type="primary" href="/">Découvrir</Button>
-        </div>
-        <div class="d-none d-sm-block col-sm-6">
-          <youtube class="w-100" :video-id="videoId" ref="youtube"></youtube>
-        </div>
+  <section class="hero is-medium is-light">
+    <div class="container">
+      <div class="hero-body has-text-centered">
+          <h1 class="title is-size-2-mobile is-size-2-tablet is-size-1-desktop">Découvrez le survivalisme comme jamais auparavant</h1>
+          <p class="subtitle mt-2 mb-6">La plateforme dédiée à l’entraide survivaliste. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque explicabo labore laboriosam necessitatibus nemo nihil placeat quas rem saepe, tempora?</p>
+          <youtube class="is-16by9" :video-id="videoId" ref="youtube"></youtube>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import Button from '@/components/Button'
 
 export default {
   name: 'Hero',
   components: {
-    Button
+
   },
   data() {
     return {
       posts: window.axios.get(this.$API_ROOT + '/api/posts'),
-      videoId: 'HfyykxbJESM'
+      videoId: '7Z0x-3UOw0E'
     }
   },
 
@@ -34,40 +28,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hero {
-  padding: 10vh 0;
-  background: center / 100% no-repeat url('/public/img/header-bg.png');
 
-  &__title {
-    font-size: 48px;
-
-    span {
-      display: block;
-      font-weight: bold;
-      color: var(--primary);
-      text-transform: uppercase;
-
-    }
-  }
-
-  &__subtitle {
-    margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 32.79px;
-  }
-
-  &__btn {
-    color: #fff !important;
-    font-weight: bold;
-    font-size: 14px;
-    background: var(--primary);
-
-    &:hover {
-      background: #fff;
-      color: var(--primary) !important;
-      border-color: transparent !important;
-      filter: none;
-    }
-  }
-}
 </style>
