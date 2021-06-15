@@ -1,7 +1,12 @@
-// Variables.scss
+// Fonts
+@import "fonts";
+
+$body-family: "Qanelas";
+
 @import "~bulma/sass/utilities/_all";
 
 $primary: #4C5F45;
+$light: #E1EEEA;
 
 // Lists and maps
 $custom-colors: null !default;

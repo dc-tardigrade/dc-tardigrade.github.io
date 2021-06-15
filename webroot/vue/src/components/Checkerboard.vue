@@ -12,7 +12,7 @@
           </p>
         </div>
       </div>
-      <div class="columns is-vcentered">
+      <div class="columns is-vcentered mt-sm-5">
         <div class="column">
           <h2 class="title">Qui sont les survivalistes ?</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet aut
@@ -41,5 +41,16 @@ export default {
       height: 100%;
       object-fit: cover;
     }
+    @include until($tablet) {
+      .columns:nth-child(2n) {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .column {
+        width: 100%;
+      }
+    }
+
   }
 </style>
