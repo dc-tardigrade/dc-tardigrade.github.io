@@ -1,15 +1,30 @@
-// Fonts
-@import "fonts";
 
-$body-family: "Qanelas";
-
-@import "~bulma/sass/utilities/_all";
-
-$primary: #4C5F45;
+// Default overrides
+$primary: #477164;
 $light: #E1EEEA;
+$black: #000000;
+$white: #FFFFFF;
+
+// Custom colors
+$lightgreen: #E2EFEB;
+$bluegrey: #7993A0;
+$green: #8ABDAD;
 
 // Lists and maps
-$custom-colors: null !default;
+$custom-colors: (
+    'lightgreen': (
+        $lightgreen,
+        $black
+    ),
+    'bluegrey': (
+        $bluegrey,
+        $black
+    ),
+    'green': (
+        $green,
+        $white
+    )
+);
 $custom-shades: null !default;
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
@@ -76,5 +91,4 @@ $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
-@import "~bulma";
-@import "~buefy/src/scss/buefy";
+

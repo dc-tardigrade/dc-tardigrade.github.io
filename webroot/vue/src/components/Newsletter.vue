@@ -1,27 +1,24 @@
 <template>
-  <div class="container mt-5">
-    <section class="section has-text-centered newsletter">
-      <header>
-        <h2 class="title is-2 has-text-white mb-3">Inscrivez-vous à notre Newsletter !</h2>
-      </header>
+  <div class="container is-fluid mt-5">
+    <section class="newsletter">
+      <h2 class="section-title">Inscrivez-vous à notre Newsletter !</h2>
       <div id="mc_embed_signup">
         <form action="https://gmail.us6.list-manage.com/subscribe/post?u=cd84f9cb568c203486a6a0aee&amp;id=dd5fa74acd"
-              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter__form"
               target="_blank" novalidate>
           <div id="mc_embed_signup_scroll">
             <div class="field">
               <div class="control">
                 <input type="email" value="" name="EMAIL" class="email email-input input" id="mce-EMAIL"
                        placeholder="Adresse e-mail" required>
+                <input type="submit" value="Je m'inscris" name="subscribe" id="mc-embedded-subscribe"
+                       class="btn btn-primary">
               </div>
             </div>
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
               <input type="text" name="b_cd84f9cb568c203486a6a0aee_dd5fa74acd" tabindex="-1" value="">
             </div>
-            <div class="clear">
-              <input type="submit" value="Je m'inscris" name="subscribe" id="mc-embedded-subscribe"
-                     class="button is-primary is-rounded">
-            </div>
+            <div class="clear"></div>
           </div>
         </form>
       </div>
@@ -38,20 +35,68 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .newsletter {
   background-color: #8ABDAD;
   border-radius: 8px;
-}
-.email-input {
-  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3rem;
+  padding: 4rem 2rem;
 
-  &::placeholder {
-    color: #555;
+  .section-title {
+    color: $white;
+    text-align: left;
+    max-width: 30%;
+    font-weight: bold;
+
+    @include until($desktop) {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
-  @include from($tablet) {
-    width: 50%;
+  .btn {
+    border: 0;
+    padding: 10px 20px;
+  }
+
+  .email-input {
+    margin: 0 auto;
+    font-size: 1.6rem;
+    border-radius: 14px;
+    border: 0;
+    box-shadow: none;
+
+    &::placeholder {
+      color: #555;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border: none;
+    }
+
+    @include from($tablet) {
+      min-width: 30rem;
+      width: 50%;
+    }
+  }
+
+  .control {
+    padding: .8rem;
+    background: $white;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  @include until($desktop) {
+    flex-direction: column;
   }
 }
+
+
 </style>

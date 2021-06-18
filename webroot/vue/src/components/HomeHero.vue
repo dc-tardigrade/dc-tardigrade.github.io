@@ -2,8 +2,8 @@
   <section class="hero is-medium">
     <div class="container">
       <div class="hero-body has-text-centered">
-        <h1 class="title is-size-2-mobile is-size-2-tablet is-size-1-desktop is-black">Nomad</h1>
-        <p class="subtitle is-black mb-6">Découvrez. Apprenez. Survivez.</p>
+        <h1>Nomad</h1>
+        <p class="section-subtitle">Découvrez. Apprenez. Survivez.</p>
       </div>
     </div>
   </section>
@@ -12,8 +12,7 @@
 <script>
 
 export default {
-  name: 'Hero',
-  components: {},
+  name: 'HomeHero',
   data() {
     return {
       posts: window.axios.get(this.$API_ROOT + '/api/posts'),
@@ -27,5 +26,9 @@ export default {
 <style lang="scss" scoped>
 .hero {
   background: url('/img/HeroBG.jpg') center/cover no-repeat;
+
+  &.is-medium &-body {
+    padding: 0 1.5rem 12rem;
+  }
 }
 </style>
