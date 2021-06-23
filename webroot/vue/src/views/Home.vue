@@ -1,6 +1,6 @@
 <template>
   <div class="page page-home">
-    <HomeHero></HomeHero>
+    <HeroSection></HeroSection>
     <AboutUs></AboutUs>
     <NosStages></NosStages>
     <Benefits></Benefits>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import HomeHero from '@/components/HomeHero'
+import HeroSection from '@/components/HeroSection'
 import AboutUs from '@/components/AboutUs'
 import NosStages from '@/components/NosStages'
 import Newsletter from '@/components/Newsletter'
@@ -20,7 +20,7 @@ import DifficultyLevels from '@/components/DifficultyLevels'
 export default {
   name: 'Home',
   components: {
-    HomeHero,
+    HeroSection,
     AboutUs,
     NosStages,
     Benefits,

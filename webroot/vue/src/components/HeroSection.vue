@@ -12,7 +12,7 @@
 <script>
 
 export default {
-  name: 'HomeHero',
+  name: 'HeroSection',
   data() {
     return {
       posts: window.axios.get(this.$API_ROOT + '/api/posts'),
@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
-  background: url('/img/HeroBG.jpg') center/cover no-repeat;
+  background: url('../assets/img/HeroBG.jpg') center/cover no-repeat;
 
   &.is-medium &-body {
     padding: 0 1.5rem 12rem;

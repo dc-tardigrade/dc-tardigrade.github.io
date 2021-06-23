@@ -7,11 +7,13 @@ import router from './router'
 import VueGtm from 'vue-gtm';
 
 Vue.use(Buefy)
+
 Vue.use(VueGtm, {
   id: 'GTM-M84SHFZ',
   debug: true,
   vueRouter: router
 })
+
 Vue.use(VueYoutube)
 
 window.axios = axios

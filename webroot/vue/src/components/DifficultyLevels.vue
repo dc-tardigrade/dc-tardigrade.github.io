@@ -1,6 +1,6 @@
 <template>
-  <section class="home-levels py-5">
-    <div class="container is-fluid">
+  <section class="diff-levels py-5">
+    <div class="container">
       <h2 class="section-title">Des <span>niveaux</span> pour <span>tous</span></h2>
       <div class="columns">
         <div class="column">
@@ -68,4 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.diff-levels {
+  margin-bottom: 5rem;
+}
 </style>

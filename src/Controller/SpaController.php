@@ -17,6 +17,6 @@ class SpaController extends AppController
      */
     public function index()
     {
-        $this->layout = false;
+        $this->viewBuilder()->setLayout(null);
     }
 }

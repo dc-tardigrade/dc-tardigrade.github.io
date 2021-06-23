@@ -14,16 +14,28 @@
     <main class="stages__list">
       <div class="columns">
         <div class="column">
-          <StageThumbnail background="HeroBG.jpg"></StageThumbnail>
+          <StageThumbnail background="foret-1.jpg">
+            <template v-slot:title>Forêt de Fontainebleau</template>
+            <template v-slot:location>France</template>
+          </StageThumbnail>
         </div>
         <div class="column">
-          <StageThumbnail background="HeroBG.jpg"></StageThumbnail>
+          <StageThumbnail background="foret-2.jpg">
+            <template v-slot:title>Forêt d'Orléans</template>
+            <template v-slot:location>France</template>
+          </StageThumbnail>
         </div>
         <div class="column">
-          <StageThumbnail background="HeroBG.jpg"></StageThumbnail>
+          <StageThumbnail background="foret-3.jpg">
+            <template v-slot:title>Forêt de Tronçais</template>
+            <template v-slot:location>France</template>
+          </StageThumbnail>
         </div>
         <div class="column">
-          <StageThumbnail background="HeroBG.jpg"></StageThumbnail>
+          <StageThumbnail background="foret-1.jpg">
+            <template v-slot:title>Forêt d'Huelgoat</template>
+            <template v-slot:location>France</template>
+          </StageThumbnail>
         </div>
       </div>
     </main>

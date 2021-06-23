@@ -1,11 +1,13 @@
 <template>
   <div class="stage-thumbnail">
     <div class="stage-thumbnail__image">
-      <img src="/img/HeroBG.jpg" alt="Stage">
+      <img :src="require(`@/assets/img/${background}`)" alt="Stage">
     </div>
     <div class="stage-thumbnail__content">
-      <h3 class="stage-thumbnail__title">Fontainebleau</h3>
-      <p class="stage-thumbnail__location">France</p>
+      <h3 class="stage-thumbnail__title">
+        <slot name="title">Fontainebleau</slot></h3>
+      <p class="stage-thumbnail__location">
+        <slot name="location">France</slot></p>
     </div>
   </div>
 </template>

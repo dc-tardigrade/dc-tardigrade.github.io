@@ -1,17 +1,17 @@
 <template>
-  <section class="nos-stages has-background-light">
-    <div class="container is-fluid">
-      <header class="nos-stages__header has-text-centered">
+  <section class="our-courses has-background-light">
+    <div class="container">
+      <header class="our-courses__header has-text-centered">
         <h2 class="section-title">Nos <span>stages</span></h2>
-        <p class="nos-stages__intro">
+        <p class="our-courses__intro">
           <strong>Participe à nos stages dans des conditions dignes des plus grands survivalistes</strong>
           En forêt pour tomber nez-à-nez avec un ours, en montagne si tu as peur de tomber dans le vide ou au bord d'un
           lac pour nager aux côtés de votre futur repas
         </p>
       </header>
-      <Stages class="mt-6 nos-stages__stages"></Stages>
-      <div class="nos-stages__btn-container">
-        <a href="#" class="nos-stages__btn btn btn-primary">Tous nos bons plans</a>
+      <Stages class="mt-6 our-courses__stages"></Stages>
+      <div class="our-courses__btn-container">
+        <a href="#" class="our-courses__btn btn btn-primary">Tous nos bons plans</a>
       </div>
     </div>
   </section>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss">
-.nos-stages {
+.our-courses {
 
   &__intro {
     max-width: 80%;
