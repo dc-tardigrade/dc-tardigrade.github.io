@@ -18,6 +18,13 @@ const routes = [
       default: () => import(/* webpackChunkName: "contact" */ '../views/Contact.vue'),
     }
   },
+  {
+    path: '/devenir-nomad',
+    name: 'register',
+    components: {
+      default: () => import(/* webpackChunkName: "register" */ '../views/Register.vue'),
+    }
+  },
 ]
 
 const router = new VueRouter({

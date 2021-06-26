@@ -1,9 +1,14 @@
 .btn {
-    padding: 12px 50px;
+    padding: 6px 20px;
     font-weight: bold;
-    font-size: 1.5rem;
     border-radius: 9999px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    text-transform: none;
+    font-size: 1.4rem;
+
+    &--lg {
+        padding: 12px 50px;
+    }
 
     &-primary {
         background: $primary;
@@ -27,4 +32,16 @@
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     }
 
+    &-red {
+        background: $red;
+        color: $white !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        transition: all .3s;
+
+        &:hover, &:focus {
+            background: 0 !important;
+            color: $red !important;
+            border-color: $red;
+        }
+    }
 }

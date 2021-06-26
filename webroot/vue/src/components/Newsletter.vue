@@ -10,7 +10,7 @@
           <div id="mc_embed_signup_scroll">
             <div class="field">
               <div :class="inputContainerClass">
-                <input @keyup="checkEmail" v-model="email" type="email" value="" name="EMAIL"
+                <input @blur="unfocusInput" @keyup="checkEmail" v-model="email" type="email" value="" name="EMAIL"
                        class="email email-input input" id="mce-EMAIL"
                        placeholder="Adresse e-mail" required>
                 <input type="submit" value="Je m'inscris" name="subscribe" id="mc-embedded-subscribe"
@@ -52,7 +52,11 @@ export default {
       } else {
         this.inputContainerClass = 'control is-invalid'
       }
+    },
+    unfocusInput: function() {
+      this.inputContainerClass = 'control'
     }
+
   }
 }
 </script>
@@ -116,11 +120,11 @@ export default {
   }
 
   .is-invalid {
-    outline: $danger solid 1px;
+    outline: $danger solid 2px;
   }
 
   .is-valid {
-    outline: $success solid 1px;
+    outline: $success solid 2px;
   }
 
   @include until($desktop) {

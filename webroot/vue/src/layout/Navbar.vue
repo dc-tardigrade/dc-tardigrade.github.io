@@ -31,8 +31,8 @@
           <b-navbar-item tag="router-link" to="/">
             Contact
           </b-navbar-item>
-          <b-navbar-item tag="router-link" to="/">
-            Mon compte
+          <b-navbar-item class="btn btn-red" tag="router-link" to="/devenir-nomad">
+            Devenir Nomad
           </b-navbar-item>
         </template>
       </b-navbar>
@@ -46,17 +46,3 @@ export default {
   name: 'Navbar'
 }
 </script>
-<style lang="scss" scoped>
-.logo {
-  max-width: 60px;
-  width: 60px;
-  height: 100%;
-  margin-left: 1rem;
-}
-
-.navbar {
-  &-brand &-item{
-    padding: 0;
-  }
-}
-</style>

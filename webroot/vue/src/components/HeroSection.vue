@@ -15,11 +15,13 @@ export default {
   name: 'HeroSection',
   data() {
     return {
-      posts: window.axios.get(this.$API_ROOT + '/api/posts'),
+      posts: window.axios.get(process.env.VUE_APP_API_ROOT + '/api/posts'),
       videoId: '7Z0x-3UOw0E'
     }
   },
-
+  // mounted() {
+  //   console.log(JSON.stringify(this.posts, null, 4))
+  // }
 }
 </script>
 

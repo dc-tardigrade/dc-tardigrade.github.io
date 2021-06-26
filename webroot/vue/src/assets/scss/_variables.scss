@@ -1,14 +1,14 @@
-
 // Default overrides
 $primary: #477164;
 $light: #E1EEEA;
 $black: #000000;
 $white: #FFFFFF;
+$red: #D64769;
 
 // Custom colors
 $lightgreen: #E2EFEB;
 $bluegrey: #7993A0;
-$green: #8ABDAD;
+$green: #477164;
 
 // Lists and maps
 $custom-colors: (
@@ -22,6 +22,10 @@ $custom-colors: (
     ),
     'green': (
         $green,
+        $white
+    ),
+    'red': (
+        $red,
         $white
     )
 );
@@ -77,7 +81,7 @@ $colors: mergeColorMaps(
                 $warning-dark,
             ),
             "danger": (
-                $danger,
+                $red,
                 $danger-invert,
                 $danger-light,
                 $danger-dark,

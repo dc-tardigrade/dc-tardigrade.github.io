@@ -9,6 +9,9 @@ $body-family: "Qanelas";
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
+@import 'layout/navbar';
+@import 'layout/footer';
+
 @import "titles";
 @import "buttons";
 
@@ -22,4 +25,8 @@ body {
 
 section {
     padding: 60px 0;
+}
+
+.container {
+    max-width: 95%;
 }
