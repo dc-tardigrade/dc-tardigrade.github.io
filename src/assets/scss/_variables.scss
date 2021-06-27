@@ -1,0 +1,98 @@
+// Default overrides
+$primary: #477164;
+$light: #E1EEEA;
+$black: #000000;
+$white: #FFFFFF;
+$red: #D64769;
+
+// Custom colors
+$lightgreen: #E2EFEB;
+$bluegrey: #7993A0;
+$green: #477164;
+
+// Lists and maps
+$custom-colors: (
+    'lightgreen': (
+        $lightgreen,
+        $black
+    ),
+    'bluegrey': (
+        $bluegrey,
+        $black
+    ),
+    'green': (
+        $green,
+        $white
+    ),
+    'red': (
+        $red,
+        $white
+    )
+);
+$custom-shades: null !default;
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: mergeColorMaps(
+        (
+            "white": (
+                $white,
+                $black,
+            ),
+            "black": (
+                $black,
+                $white,
+            ),
+            "light": (
+                $light,
+                $light-invert,
+            ),
+            "dark": (
+                $dark,
+                $dark-invert,
+            ),
+            "primary": (
+                $primary,
+                $primary-invert,
+                $primary-light,
+                $primary-dark,
+            ),
+            "link": (
+                $link,
+                $link-invert,
+                $link-light,
+                $link-dark,
+            ),
+            "info": (
+                $info,
+                $info-invert,
+                $info-light,
+                $info-dark,
+            ),
+            "success": (
+                $success,
+                $success-invert,
+                $success-light,
+                $success-dark,
+            ),
+            "warning": (
+                $warning,
+                $warning-invert,
+                $warning-light,
+                $warning-dark,
+            ),
+            "danger": (
+                $red,
+                $danger-invert,
+                $danger-light,
+                $danger-dark,
+            ),
+        ),
+        $custom-colors
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+

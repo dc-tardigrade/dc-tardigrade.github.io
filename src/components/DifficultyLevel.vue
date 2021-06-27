@@ -1,0 +1,70 @@
+<template>
+  <a href="#" class="difficulty-level">
+    <div class="difficulty-level__thumbnail">
+        <slot name="thumbnail"></slot>
+    </div>
+    <div class="difficulty-level__overlay"></div>
+    <p class="difficulty-level__title">
+      <slot name="title"></slot>
+    </p>
+  </a>
+</template>
+
+<script>
+export default {
+  name: "DifficultyLevel"
+}
+</script>
+
+<style lang="scss" scoped>
+.difficulty-level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 2rem;
+  height: 100%;
+
+  &__thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    transition: all .3s;
+  }
+
+  &__title {
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 24px;
+    z-index: 2;
+  }
+
+  &:hover &__overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  @include from($tablet) {
+    justify-content: center;
+
+    &__title {
+      text-align: center;
+    }
+  }
+}
+</style>
