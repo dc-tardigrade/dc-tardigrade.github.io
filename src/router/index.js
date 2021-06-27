@@ -1,5 +1,6 @@
-import Vue from 'vue';
-import VueRouter from "vue-router";
+import Vue from 'vue'
+import VueRouter from "vue-router"
+import firebase from 'firebase'
 
 Vue.use(VueRouter)
 
@@ -32,12 +33,32 @@ const routes = [
       default: () => import(/* webpackChunkName: "register" */ '../views/Login.vue'),
     }
   },
+  {
+    path: '/mon-compte',
+    name: 'my-account',
+    components: {
+      default: () => import(/* webpackChunkName: "my-account" */ '../views/MyAccount.vue')
+    },
+    meta: {
+      requiresAuth: true
+    }
+  }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  const isAuthenticated = firebase.auth().currentUser
+  if (requiresAuth && !isAuthenticated) {
+    next('/login')
+  } else {
+    next()
+  }
 })
 
 export default router;

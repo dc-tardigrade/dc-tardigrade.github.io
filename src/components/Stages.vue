@@ -52,23 +52,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.stages {
-  &__categories {
-    display: flex;
-    justify-content: center;
-    column-gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  &__category {
-    color: $grey-light;
-    font-size: 24px;
-
-    &.active {
-      color: $primary;
-    }
-  }
-}
-</style>

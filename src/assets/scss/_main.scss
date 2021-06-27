@@ -16,6 +16,11 @@ $body-family: "Qanelas";
 @import "buttons";
 @import "forms";
 
+@import "components/courses";
+@import "components/newsletter";
+@import "components/benefits";
+@import "components/difficulty-level";
+
 html {
     font-size: 62.5%;
 }

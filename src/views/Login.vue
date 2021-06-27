@@ -2,7 +2,7 @@
   <div class="page page-login">
     <div class="container">
       <h1>Connexion</h1>
-      <form @submit="checkForm" class="login-form">
+      <form @submit="login" class="login-form">
         <div class="field">
           <label class="label">Adresse e-mail</label>
           <div class="control">
@@ -29,6 +29,7 @@
 
 <script>
 import firebase from "firebase";
+import {mapActions} from 'vuex'
 
 export default {
   name: "Login",
@@ -40,27 +41,24 @@ export default {
     }
   },
   methods: {
-    async checkForm(e) {
+    ...mapActions(['updateCurrentUser']),
+    async login(e) {
       e.preventDefault()
 
-      // Form validation
-
-      // Auth request
-
-      const user = await firebase.auth()
-        .signInWithEmailAndPassword(this.email, this.password)
-        .then(() => {
-          console.log(user)
-          this.$router.replace({name: 'home'})
-        }).catch(error => {
-          this.error = error
+      try {
+        const user = await firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        // console.log('user.user : ' + JSON.stringify(user.user, null, 4))
+        this.updateCurrentUser({
+          name: user.user.displayName,
+          email: user.user.email,
+          uid: user.user.uid,
         })
+        this.$router.push('/')
+      } catch (error) {
+        this.error = error
+      }
     }
   }
 
 }
 </script>
-
-<style scoped>
-
-</style>

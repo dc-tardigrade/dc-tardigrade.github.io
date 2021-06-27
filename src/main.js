@@ -4,6 +4,7 @@ import Buefy from 'buefy'
 import axios from 'axios'
 import VueYoutube from 'vue-youtube'
 import router from './router'
+import store from './store'
 import VueGtm from 'vue-gtm';
 import firebase from 'firebase/app';
 
@@ -36,7 +37,16 @@ firebase.initializeApp(firebaseConfig);
 
 Vue.config.productionTip = false
 
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app')
+let app;
+
+firebase.auth().onAuthStateChanged(() => {
+  if(!app) {
+    app = new Vue({
+      router,
+      store,
+      render: h => h(App),
+    }).$mount('#app')
+  }
+})
+
+

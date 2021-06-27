@@ -34,7 +34,7 @@
           <b-navbar-item v-if="loggedIn" @click="signOut">
             Déconnexion
           </b-navbar-item>
-          <b-navbar-item v-if="loggedIn" class="btn btn-red" tag="router-link" to="/devenir-nomad">
+          <b-navbar-item v-if="loggedIn" class="btn btn-red" tag="router-link" to="/mon-compte">
             Mon Compte
           </b-navbar-item>
           <b-navbar-item v-if="!loggedIn" class="btn btn-red" tag="router-link" to="/connexion">
@@ -49,6 +49,7 @@
 
 <script>
 import firebase from 'firebase'
+import {mapActions} from "vuex";
 
 export default {
   name: 'Navbar',
@@ -58,6 +59,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['updateCurrentUser']),
     async signOut() {
       const response = firebase.auth().signOut()
         .then(() => {
@@ -71,7 +73,18 @@ export default {
   },
   created() {
     firebase.auth().onAuthStateChanged(user => {
-      this.loggedIn = !!user;
+      if (user) {
+        this.updateCurrentUser({
+          name: user.displayName,
+          email: user.email,
+          uid: user.uid,
+        })
+
+        this.loggedIn = true
+
+      } else {
+        this.loggedIn = false
+      }
     })
   }
 }
