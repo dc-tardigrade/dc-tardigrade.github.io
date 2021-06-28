@@ -2,7 +2,7 @@
   <div class="page page-register">
     <div class="container">
       <h1>Devenir Nomad</h1>
-      <form @submit="checkForm" class="register-form">
+      <form @submit="register" class="register-form">
         <div class="field">
           <label class="label">Adresse e-mail</label>
           <div class="control">
@@ -40,7 +40,7 @@ export default {
     }
   },
   methods: {
-    async checkForm(e) {
+    async register(e) {
       e.preventDefault()
 
       // Form validation
