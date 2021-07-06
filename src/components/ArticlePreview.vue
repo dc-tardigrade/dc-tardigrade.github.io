@@ -10,7 +10,7 @@
       <div class="article-preview__excerpt">
         <slot name="excerpt"></slot>
       </div>
-      <router-link :to="articleUrl" class="btn btn-primary">Lire la suite</router-link>
+      <a :href="url" class="btn btn-primary">Lire la suite</a>
     </div>
   </article>
 </template>
@@ -19,13 +19,8 @@
 export default {
   name: "ArticlePreview",
   props: {
-    slug: String
+    url: String
   },
-  data() {
-    return {
-      articleUrl: '/article/' + this.slug
-    }
-  }
 }
 </script>
 

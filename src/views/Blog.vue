@@ -7,15 +7,18 @@
           ligula ac tristique cursus,
           ipsum massa varius ligula, et gravida libero mi sit amet magna, aliquam erat volutpat.</p>
       </header>
+      <div v-if="articles.length === 0" class="blog__skeleton">
+        <b-skeleton width="80%" :animated="true"></b-skeleton>
+        <b-skeleton width="60%" :animated="true"></b-skeleton>
+        <b-skeleton width="40%" :animated="true"></b-skeleton>
+        <b-skeleton width="50%" :animated="true"></b-skeleton>
+        <b-skeleton width="70%" :animated="true"></b-skeleton>
+        <b-skeleton width="90%" :animated="true"></b-skeleton>
+      </div>
       <div class="columns">
-        <div class="blog__articles" v-for="article in articlesList" v-bind:key="article.guid">
+        <div class="blog__articles" v-for="article in articles" v-bind:key="article.guid">
           <div class="column is-half-tablet">
-            <div v-if="articles.length === 0" class="blog__skeleton">
-              <b-skeleton width="20%" :animated="skeletonOn"></b-skeleton>
-              <b-skeleton width="40%" :animated="skeletonOn"></b-skeleton>
-              <b-skeleton width="80%" :animated="skeletonOn"></b-skeleton>
-            </div>
-            <ArticlePreview v-bind:slug="article.link.split('medium.com/')[1].split('?source')[0]">
+            <ArticlePreview :url="article.guid">
               <template v-slot:title>{{ article.title }}</template>
               <template v-slot:excerpt><p v-html="article.description.substr(0, 100)"></p></template>
             </ArticlePreview>
@@ -38,7 +41,6 @@ export default {
   data() {
     return {
       articlesList: [],
-      skeletonOn: true
     }
   },
   computed: {
