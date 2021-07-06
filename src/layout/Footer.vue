@@ -16,8 +16,8 @@
         <div class="footer__menu">
           <a class="footer__link" href="#">Qui sommes-nous ?</a>
           <a class="footer__link" href="#">Devenir partenaires</a>
-          <a class="footer__link" href="#">FAQ</a>
           <a class="footer__link" href="#">Presse</a>
+          <router-link class="footer__link" :to="{name: 'legal'}">Mentions Légales</router-link>
           <a class="footer__link" href="#">Nous contacter</a>
         </div>
       </div>

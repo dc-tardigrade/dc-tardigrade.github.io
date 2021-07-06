@@ -71,7 +71,14 @@ const routes = [
     components: {
       default: () => import(/* webpackChunkName: "questionnaire" */ '../views/QuestionnaireView.vue')
     }
-  }
+  },
+  {
+    path: '/mentions-legales',
+    name: 'legal',
+    components: {
+      default: () => import(/* webpackChunkName: "questionnaire" */ '../views/MentionsLegales.vue')
+    }
+  },
 ]
 
 const router = new VueRouter({
