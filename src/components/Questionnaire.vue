@@ -6,13 +6,11 @@
            v-for="answer in questions[currQuestion].answers"
            :key="answer.id"
            @click="nextQuestion(answer.id)">
-        <transition name="fade">
-          <div class="questionnaire__answer-text">
-            {{ answer.text }}
-          </div>
-        </transition>
-
+        {{ answer.text }}
       </div>
+    </div>
+    <div>
+      <b-progress type="is-primary" :value="60" size="is-large" class="questionnaire__progress"></b-progress>
     </div>
   </div>
 </template>
@@ -28,6 +26,7 @@ export default {
   },
   data() {
     return {
+      showClickedAnswer: true,
       userAnswers: [],
       currQuestion: 0,
       questions: [

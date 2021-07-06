@@ -10,6 +10,11 @@
       <div class="columns">
         <div class="blog__articles" v-for="article in articlesList" v-bind:key="article.guid">
           <div class="column is-half-tablet">
+            <div v-if="articles.length === 0" class="blog__skeleton">
+              <b-skeleton width="20%" :animated="skeletonOn"></b-skeleton>
+              <b-skeleton width="40%" :animated="skeletonOn"></b-skeleton>
+              <b-skeleton width="80%" :animated="skeletonOn"></b-skeleton>
+            </div>
             <ArticlePreview v-bind:slug="article.link.split('medium.com/')[1].split('?source')[0]">
               <template v-slot:title>{{ article.title }}</template>
               <template v-slot:excerpt><p v-html="article.description.substr(0, 100)"></p></template>
@@ -32,7 +37,8 @@ export default {
   },
   data() {
     return {
-      articlesList: ''
+      articlesList: [],
+      skeletonOn: true
     }
   },
   computed: {
@@ -47,7 +53,7 @@ export default {
       await window.axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nomad-survie', {}).then(response => {
         this.articlesList = response.data.items
         this.updateArticles(this.articlesList)
-        console.log(this.articles)
+        this.skeletonOn = false
       })
     }
   },

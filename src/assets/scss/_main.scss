@@ -9,6 +9,7 @@ $body-family: "Qanelas";
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+@import "bulma-fix";
 
 @import 'layout/navbar';
 @import 'layout/footer';
@@ -16,15 +17,18 @@ $body-family: "Qanelas";
 @import "titles";
 @import "buttons";
 @import "forms";
+@import "transitions";
+@import "animations";
 
 @import "components/courses/courses";
+@import "components/courses/course-thumbnail";
+@import "components/courses/location-thumbnail";
+
 @import "components/newsletter";
 @import "components/benefits";
 @import "components/difficulty-level";
 @import "components/article-preview";
 @import "components/about-us";
-@import "components/courses/course-thumbnail";
-@import "components/courses/location-thumbnail";
 @import "components/hero";
 @import "components/auth-modal";
 @import "components/steps";
@@ -51,51 +55,4 @@ section {
 
 .container {
   max-width: 95%;
-}
-
-.input {
-  font-size: 1.6rem;
-  border-color: $black;
-  font-weight: bold;
-
-  &:hover, &:focus, &:active {
-    border-color: $black;
-    box-shadow: none;
-  }
-
-  &::placeholder {
-    color: #222;
-  }
-}
-
-.select {
-  font-size: 1.5rem;
-  border: 0;
-
-  select:active, select:focus {
-    border-color: #dbdbdb;
-    box-shadow: none;
-  }
-}
-
-.datepicker {
-  &-header .field {
-    border: 0;
-  }
-
-  & &-table &-cell {
-    padding: 1rem 1.5rem
-  }
-
-  &-content, .control .select {
-    font-size: 1.5rem;
-  }
-}
-
-.tabs a {
-  font-size: 1.6rem;
-}
-
-.tag:not(body).is-large{
-  font-size: 1.6rem;
 }

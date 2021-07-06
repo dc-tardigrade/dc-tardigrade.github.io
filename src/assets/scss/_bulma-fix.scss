@@ -1,0 +1,56 @@
+
+.input {
+  font-size: 1.6rem;
+  border-color: $black;
+  font-weight: bold;
+
+  &:hover, &:focus, &:active {
+    border-color: $black;
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: #222;
+  }
+}
+
+.select {
+  font-size: 1.5rem;
+  border: 0;
+
+  select:active, select:focus {
+    border-color: #dbdbdb;
+    box-shadow: none;
+  }
+}
+
+.datepicker {
+  &-header .field {
+    border: 0;
+  }
+
+  & &-table &-cell {
+    padding: 1rem 1.5rem
+  }
+
+  &-content, .control .select {
+    font-size: 1.5rem;
+  }
+}
+
+.tabs a {
+  font-size: 1.6rem;
+}
+
+.tag:not(body).is-large {
+  font-size: 1.6rem;
+}
+
+.progress-wrapper .progress.is-large + .progress-value, .progress-wrapper .is-large.progress-wrapper.is-not-native + .progress-value, .progress-wrapper .progress.is-large .progress-value, .progress-wrapper .is-large.progress-wrapper.is-not-native .progress-value, .progress-wrapper .progress-bar.is-large + .progress-value, .progress-wrapper .progress-bar.is-large .progress-value {
+  font-size: calc(2.4rem / 2.4);
+  line-height: 2.4rem;
+}
+
+.progress.is-large, .is-large.progress-wrapper.is-not-native {
+  height: 2.4rem
+}

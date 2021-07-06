@@ -17,26 +17,27 @@
   }
 
   &__answer {
+    padding: 1.5rem;
 
-    &-text {
-      padding: 1.5rem;
+    border: 1px solid $black;
+    border-radius: 10px;
 
-      border: 1px solid $black;
-      border-radius: 10px;
+    transition: background .3s;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.6rem;
+    color: $black;
 
-      transition: background .3s;
-      cursor: pointer;
-      text-align: center;
-      font-size: 1.6rem;
-      color: $black;
-
-      &:hover {
-        background: $water;
-        color: $white;
-        font-weight: bold;
-        border-color: $water;
-      }
+    &:hover {
+      background: $water;
+      color: $white;
+      font-weight: bold;
+      border-color: $water;
     }
+  }
 
+  &__progress {
+    margin: 6rem auto 0;
+    max-width: 80%;
   }
 }
