@@ -13,7 +13,7 @@ const routes = [
     }
   },
   {
-    path: '/landing',
+    path: '/decouvrir',
     name: 'landing',
     components: {
       default: () => import(/* webpackChunkName: "home" */ '../views/Landing.vue'),

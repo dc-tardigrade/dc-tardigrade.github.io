@@ -16,23 +16,23 @@
           </b-navbar-item>
         </template>
         <template #end>
-          <b-navbar-item tag="router-link" to="/">
-            Nos stages
+          <b-navbar-item tag="router-link" title="Page de découverte de Nomad" :to="{name: 'landing'}">
+            Découvrir
           </b-navbar-item>
-          <b-navbar-item tag="router-link" to="/blog">
+          <b-navbar-item tag="router-link" title="Blog lié à la survie" :to="{name: 'blog'}">
             Articles
           </b-navbar-item>
-          <b-navbar-item tag="router-link" to="/">
-            Galerie
-          </b-navbar-item>
-          <b-navbar-item tag="router-link" to="/">
-            À propos
-          </b-navbar-item>
-          <b-navbar-item tag="router-link" to="/">
+<!--          <b-navbar-item tag="router-link" to="/">-->
+<!--            Galerie-->
+<!--          </b-navbar-item>-->
+<!--          <b-navbar-item tag="router-link" to="/">-->
+<!--            À propos-->
+<!--          </b-navbar-item>-->
+          <b-navbar-item tag="router-link" title="Nous contacter ou nous trouver" :to="{name: 'contact'}">
             Contact
           </b-navbar-item>
           <b-navbar-dropdown v-if="user.loggedIn" label="Mon Compte">
-            <b-navbar-item v-if="user.loggedIn" tag="router-link" to="/mon-compte">
+            <b-navbar-item v-if="user.loggedIn" title="Gérer mon profil et mon compte" tag="router-link" to="/mon-compte">
               Profil
             </b-navbar-item>
             <b-navbar-item v-if="user.loggedIn" @click="signOut">
@@ -47,7 +47,7 @@
               Inscription
             </b-navbar-item>
           </b-navbar-dropdown>
-          <b-navbar-item class="btn btn-red" tag="router-link" to="/questionnaire">
+          <b-navbar-item class="btn btn-red" title="Obtenir des suggestions de stage personnalisées" tag="router-link" to="/questionnaire">
             Découvrir mon niveau
           </b-navbar-item>
           <b-modal

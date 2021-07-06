@@ -1,29 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Buefy from 'buefy'
 import axios from 'axios'
 import VueYoutube from 'vue-youtube'
 import router from './router'
 import store from './store'
 import VueGtm from 'vue-gtm';
 import firebase from 'firebase/app';
-import {library} from '@fortawesome/fontawesome-svg-core';
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-import {
-  faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
-  faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
-  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload, faCalendarAlt, faStar
-} from "@fortawesome/free-solid-svg-icons";
-
-library.add(faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
-  faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
-  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload, faCalendarAlt, faStar);
-Vue.component('vue-fontawesome', FontAwesomeIcon);
-
-Vue.use(Buefy, {
-  defaultIconComponent: 'vue-fontawesome',
-  defaultIconPack: 'fas',
-});
+import './cssframework'
 
 Vue.use(VueGtm, {
   id: 'GTM-M84SHFZ',
