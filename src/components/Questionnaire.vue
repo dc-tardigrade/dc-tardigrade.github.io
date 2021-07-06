@@ -10,7 +10,7 @@
       </div>
     </div>
     <div>
-      <b-progress type="is-primary" :value="60" size="is-large" class="questionnaire__progress"></b-progress>
+      <b-progress type="is-primary" :value="(userAnswers.length / questions.length)*100" size="is-large" class="questionnaire__progress"></b-progress>
     </div>
   </div>
 </template>
@@ -54,26 +54,92 @@ export default {
         },
         {
           id: 1,
-          text: 'TEST',
+          text: 'Question 2',
           answers: [
             {
               id: 0,
-              text: 'AbsoTESTETTETETTlument, Excel n’a plus de secret pour moi.',
+              text: 'Absolument, Excel n’a plus de secret pour moi.',
             },
             {
               id: 1,
-              text: 'L’TEST + moi = 2'
+              text: 'L’organisation + moi = 2'
             },
             {
               id: 2,
-              text: 'Bof TEST je sais où se trouve mes caleçons.'
+              text: 'Bof mais je sais où se trouve mes caleçons.'
             },
             {
               id: 3,
-              text: 'TEST ipsum dolor sit amet'
+              text: 'Lorem ipsum dolor sit amet'
             },
           ]
-        }
+        },
+        {
+          id: 2,
+          text: 'Question 3',
+          answers: [
+            {
+              id: 0,
+              text: 'Absolument, Excel n’a plus de secret pour moi.',
+            },
+            {
+              id: 1,
+              text: 'L’organisation + moi = 2'
+            },
+            {
+              id: 2,
+              text: 'Bof mais je sais où se trouve mes caleçons.'
+            },
+            {
+              id: 3,
+              text: 'Lorem ipsum dolor sit amet'
+            },
+          ]
+        },
+        {
+          id: 3,
+          text: 'Question 4',
+          answers: [
+            {
+              id: 0,
+              text: 'Absolument, Excel n’a plus de secret pour moi.',
+            },
+            {
+              id: 1,
+              text: 'L’organisation + moi = 2'
+            },
+            {
+              id: 3,
+              text: 'Bof mais je sais où se trouve mes caleçons.'
+            },
+            {
+              id: 4,
+              text: 'Lorem ipsum dolor sit amet'
+            },
+          ]
+        },
+        {
+          id: 4,
+          text: 'Question 5',
+          answers: [
+            {
+              id: 0,
+              text: 'Absolument, Excel n’a plus de secret pour moi.',
+            },
+            {
+              id: 1,
+              text: 'L’organisation + moi = 2'
+            },
+            {
+              id: 2,
+              text: 'Bof mais je sais où se trouve mes caleçons.'
+            },
+            {
+              id: 3,
+              text: 'Lorem ipsum dolor sit amet'
+            },
+          ]
+        },
       ]
     }
   }
