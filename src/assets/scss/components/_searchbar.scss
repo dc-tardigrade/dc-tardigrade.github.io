@@ -1,0 +1,49 @@
+.searchbar {
+  background: #FFF;
+  border-radius: 100px;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  //.field {
+  //  width: 150px;
+  //}
+
+  &__item {
+    border-right: 1px solid #363636;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      border-right: 0;
+      margin-left: 1.5rem;
+    }
+  }
+
+  .select select {
+    border-color: transparent;
+    text-align: center;
+    font-weight: bold;
+
+    &:hover, &:focus {
+      border-color: transparent;
+    }
+  }
+
+  .input {
+    border: 0;
+    box-shadow: none !important;
+    font-size: 1.5rem;
+    color: #363636;
+    text-align: center;
+
+    &::placeholder {
+      opacity: 1;
+    }
+
+    &:focus, &:active {
+      box-shadow: none;
+    }
+  }
+}

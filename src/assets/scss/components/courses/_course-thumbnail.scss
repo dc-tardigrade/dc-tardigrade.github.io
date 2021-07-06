@@ -1,0 +1,131 @@
+.course-thumbnail {
+  position: relative;
+
+  height: 100%;
+  min-height: 45.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-y: hidden;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+
+    img {
+      border-radius: 8px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 75%;
+    width: 100%;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.55);
+    transition: all .5s;
+  }
+
+  &__content {
+    min-height: 50%;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include from($tablet) {
+      min-height: 60%;
+    }
+
+    @include from($desktop) {
+      min-height: 75%;
+    }
+  }
+
+  &__content-inner {
+    position: relative;
+    bottom: -7rem;
+    transition: all .5s;
+
+    @include from($desktop) {
+      bottom: -9rem;
+    }
+  }
+
+  &:hover &__content-inner {
+    bottom: 0;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    line-height: 120%;
+    font-weight: bold;
+    color: #FFF;
+    margin-bottom: 1.5rem;
+  }
+
+  &__location {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    opacity: 0;
+    bottom: -10rem;
+    position: relative;
+    transition: bottom .5s;
+  }
+
+  &:hover &__description {
+    opacity: 1;
+    bottom: 0;
+  }
+
+  &:hover &__overlay {
+    top: 25%;
+
+    @include until($desktop) {
+      top: 30%;
+    }
+
+    @include until($tablet) {
+      top: 35%;
+    }
+  }
+
+  &:hover &__description {
+    bottom: 0;
+  }
+
+  @include until($desktop) {
+    min-height: 35rem;
+
+    &__overlay {
+      height: 70%;
+    }
+  }
+}

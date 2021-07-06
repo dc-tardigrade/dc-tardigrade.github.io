@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar></Navbar>
+    <Navbar :page="$route.name"></Navbar>
     <main>
       <router-view/>
     </main>
@@ -11,14 +11,23 @@
 <script>
 import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'
+import {mapActions} from 'vuex'
+import firebase from "firebase";
 
 export default {
   name: 'App',
   components: {
     Navbar,
     Footer
+  },
+  methods: {
+    ...mapActions(['fetchUser', 'setUser'])
+  },
+  mounted() {
+    firebase.auth().onAuthStateChanged(() => {
+      this.fetchUser()
+    })
   }
-
 }
 </script>
 

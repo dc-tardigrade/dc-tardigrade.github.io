@@ -1,0 +1,81 @@
+.location-thumbnail {
+  position: relative;
+
+  height: 100%;
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: hidden;
+
+  &__meta {
+    justify-content: flex-end;
+    z-index: 1;
+    margin: 2rem 2rem 0 0;
+  }
+
+  &__rating, &__price {
+    font-weight: bold;
+  }
+
+  &__rating-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: .5rem !important;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+
+    img {
+      border-radius: 8px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    background: rgba($black, 0.55);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &:hover &__content-inner {
+    bottom: 0;
+  }
+
+  &__location {
+    font-size: 3.2rem;
+    line-height: 120%;
+    font-weight: bold;
+    color: #FFF;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+  }
+
+  @include until($desktop) {
+    min-height: 35rem;
+
+    &__overlay {
+      height: 70%;
+    }
+
+    &__hover &__overlay {
+      top: 30%;
+    }
+  }
+}

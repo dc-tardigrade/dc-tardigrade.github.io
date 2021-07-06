@@ -1,0 +1,12 @@
+.my-account {
+  padding-top: 5rem;
+
+  &__user-info {
+    background: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 2rem;
+    display: inline-flex;
+    column-gap: 2rem;
+  }
+}

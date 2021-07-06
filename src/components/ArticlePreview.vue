@@ -1,0 +1,34 @@
+<template>
+  <article class="article-preview">
+    <div class="article-preview__thumbnail">
+      <img :src="require(`@/assets/img/HeroBG.jpg`)" alt="Illustration de l'article">
+    </div>
+    <div class="article-preview__content">
+      <h2 class="article-preview__title h3">
+        <slot name="title"></slot>
+      </h2>
+      <div class="article-preview__excerpt">
+        <slot name="excerpt"></slot>
+      </div>
+      <router-link :to="articleUrl" class="btn btn-primary">Lire la suite</router-link>
+    </div>
+  </article>
+</template>
+
+<script>
+export default {
+  name: "ArticlePreview",
+  props: {
+    slug: String
+  },
+  data() {
+    return {
+      articleUrl: '/article/' + this.slug
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

@@ -1,51 +1,75 @@
 .navbar {
-    &-brand {
-        display: flex;
-        align-items: center;
+  &-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    max-width: 60px;
+    width: 60px;
+    height: 100%;
+  }
+
+  &-end {
+    align-items: center;
+    column-gap: 2rem;
+  }
+
+  &-item {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #171717;
+    position: relative;
+    border: 2px solid transparent;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 3px;
+      background: rgba($green, 0.7);
+      transition: all .3s;
     }
 
-    .logo {
-        max-width: 60px;
-        width: 60px;
-        height: 100%;
-        margin-left: 1rem;
+    &.has-dropdown &:after {
+      display: none;
     }
 
-    &-end {
-        align-items: center;
-        column-gap: 2rem;
+    &:hover, &:active, &:focus {
+      background: 0 !important;
     }
 
-    &-item {
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: #171717;
-        position: relative;
-        border: 2px solid transparent;
-
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            width: 0;
-            height: 3px;
-            background: rgba($green, 0.7);
-            transition: all .3s;
-        }
-
-        &:hover {
-            background: 0 !important;
-        }
-
-        &:not(.btn):hover:after {
-            width: 100%;
-        }
+    &:not(.btn):hover:after, &:not(.btn):active:after {
+      width: 100%;
     }
-    .btn:hover {
-        box-shadow: none;
+
+    @include until($desktop) {
+      margin-bottom: 1rem;
     }
+  }
+
+  &-brand &-item::after {
+    display: none;
+  }
+
+  &-link {
+    background: 0 !important;
+    color: #171717;
+  }
+
+  .btn {
+    &:hover {
+      box-shadow: none;
+    }
+
+    @include until($desktop) {
+      display: inline-block;
+      margin-left: .5rem;
+    }
+  }
 }

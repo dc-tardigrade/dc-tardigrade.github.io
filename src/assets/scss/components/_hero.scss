@@ -1,0 +1,20 @@
+.hero {
+  background: center/cover no-repeat;
+
+  &.is-medium &-body {
+    padding: 0 1.5rem 24rem;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    color: $black;
+  }
+
+  @include until($tablet) {
+    background: url('/img/hero-bg-mobile.jpg') center/cover no-repeat;
+
+    &.is-medium {
+      padding-top: 20px;
+    }
+  }
+}

@@ -13,6 +13,14 @@ const routes = [
     }
   },
   {
+    path: '/landing',
+    name: 'landing',
+    components: {
+      default: () => import(/* webpackChunkName: "home" */ '../views/Landing.vue'),
+    }
+
+  },
+  {
     path: '/contact',
     name: 'contact',
     components: {
@@ -30,7 +38,7 @@ const routes = [
     path: '/connexion',
     name: 'login',
     components: {
-      default: () => import(/* webpackChunkName: "register" */ '../views/Login.vue'),
+      default: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
     }
   },
   {
@@ -41,6 +49,27 @@ const routes = [
     },
     meta: {
       requiresAuth: true
+    }
+  },
+  {
+    path: '/blog',
+    name: 'blog',
+    components: {
+      default: () => import(/* webpackChunkName: "blog" */ '../views/Blog.vue')
+    }
+  },
+  {
+    path: '/article/:id',
+    name: 'article',
+    components: {
+      default: () => import(/* webpackChunkName: "article" */ '../views/Article.vue')
+    }
+  },
+  {
+    path: '/questionnaire',
+    name: 'questionnaire',
+    components: {
+      default: () => import(/* webpackChunkName: "questionnaire" */ '../views/QuestionnaireView.vue')
     }
   }
 ]

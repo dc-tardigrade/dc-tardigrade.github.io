@@ -1,5 +1,6 @@
 // Fonts
 @import "fonts";
+
 $body-family: "Qanelas";
 
 @import "~bulma/sass/utilities/_all";
@@ -16,23 +17,85 @@ $body-family: "Qanelas";
 @import "buttons";
 @import "forms";
 
-@import "components/courses";
+@import "components/courses/courses";
 @import "components/newsletter";
 @import "components/benefits";
 @import "components/difficulty-level";
+@import "components/article-preview";
+@import "components/about-us";
+@import "components/courses/course-thumbnail";
+@import "components/courses/location-thumbnail";
+@import "components/hero";
+@import "components/auth-modal";
+@import "components/steps";
+@import "components/questionnaire";
+@import "components/searchbar";
+
+@import "views/home";
+@import "views/blog";
+@import "views/our-courses";
+@import "views/my-account";
+@import "views/page-questionnaire";
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 section {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 .container {
-    max-width: 95%;
+  max-width: 95%;
+}
+
+.input {
+  font-size: 1.6rem;
+  border-color: $black;
+  font-weight: bold;
+
+  &:hover, &:focus, &:active {
+    border-color: $black;
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: #222;
+  }
+}
+
+.select {
+  font-size: 1.5rem;
+  border: 0;
+
+  select:active, select:focus {
+    border-color: #dbdbdb;
+    box-shadow: none;
+  }
+}
+
+.datepicker {
+  &-header .field {
+    border: 0;
+  }
+
+  & &-table &-cell {
+    padding: 1rem 1.5rem
+  }
+
+  &-content, .control .select {
+    font-size: 1.5rem;
+  }
+}
+
+.tabs a {
+  font-size: 1.6rem;
+}
+
+.tag:not(body).is-large{
+  font-size: 1.6rem;
 }

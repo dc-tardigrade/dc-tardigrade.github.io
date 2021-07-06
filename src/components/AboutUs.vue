@@ -1,25 +1,53 @@
 <template>
   <section class="about-us">
     <div class="container">
-      <h2 class="section-title">Une <span>expérience</span> unique</h2>
-      <p class="about-us__text">
-        <strong>Nomad</strong> vous propose de participer à des stages de survie uniques ! Des <strong>offres
-        personnalisées</strong> en fonction du milieu naturel, de la durée et du niveau d’expertise vous sont proposées
-        par <strong>Nomad</strong>. Le plus ? Vous êtes accompagnés par des survivalistes !
-        Véritables professionnels de la survie, ils vous transmettront leur savoir au beau milieu d’un milieu hostile
-        et naturel.
-      </p>
+      <header class="about-us__header">
+        <h2 class="section-title">Une expérience <span>unique</span></h2>
+        <p class="section-subtitle"><span>Nomad</span> vous propose de participer à des stages de survie uniques !</p>
+      </header>
       <div class="about-us__video">
         <youtube :video-id="videoId"
-                 style="/*position: absolute; top: 0; left: 0;*/ width: 100%; max-width:650px;height: 365.625px; border-radius:8px;"
+                 style="width: 100%; max-width: 650px; max-height: 365.625px; border-radius:8px;"
                  ref="youtube" :resize=true :fitParent=true>
         </youtube>
       </div>
-      <div class="has-text-centered">
-        <a href="#" class="btn btn-primary btn--lg">Découvrez Nomad</a>
+    </div>
+    <div class="about-us__key-figures">
+      <div class="container">
+        <div class="about-us__key-figure">
+          <div class="about-us__key-number" style="margin-left: -1rem;">
+            +25
+          </div>
+          <div class="about-us__key-text">
+            stages personnalisés, pour tous les niveaux et tous les budgets
+          </div>
+        </div>
+        <div class="about-us__key-figure">
+          <div class="about-us__key-number">
+            30
+          </div>
+          <div class="about-us__key-text">
+            survivalistes aguerris pour vous accompagner et vous apprendre les techniques
+          </div>
+        </div>
+        <div class="about-us__key-figure">
+          <div class="about-us__key-number">
+            10
+          </div>
+          <div class="about-us__key-text">
+            Nos survivalistes ont plus de 10 ans d'expérience dans la survie
+          </div>
+        </div>
+        <div class="about-us__key-figure">
+          <div class="about-us__key-number">
+            1
+          </div>
+          <div class="about-us__key-text">
+            expérience inoubliable pour devenir la meilleur version de vous-même
+          </div>
+        </div>
       </div>
     </div>
-
   </section>
 </template>
 
@@ -33,22 +61,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.about-us {
-  &__text {
-    margin: 0 auto 30px;
-    max-width: 80%;
-    text-align: center;
-  }
-
-  &__video {
-    max-width: 650px;
-    max-height: 365.625px;
-    width: 100%;
-    position: relative;
-    margin: 2rem auto 3rem;
-    border-radius: 8px;
-  }
-}
-</style>

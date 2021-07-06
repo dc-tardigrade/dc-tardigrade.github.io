@@ -1,9 +1,12 @@
 <template>
-  <section class="hero is-medium">
+  <section class="hero is-medium" :style="{ backgroundImage: `url('${bgUrl}')` }">
     <div class="container">
       <div class="hero-body has-text-centered">
-        <h1>Nomad</h1>
-        <p class="section-subtitle">Découvrez. Apprenez. Survivez.</p>
+        <h1 class="hero__title">Nomad</h1>
+        <p class="hero__subtitle">Découvrez. Apprenez. Survivez.</p>
+      </div>
+      <div v-if="hasSearchBar" class="hero__searchbar">
+        <Searchbar></Searchbar>
       </div>
     </div>
   </section>
@@ -11,22 +14,23 @@
 
 <script>
 
+import Searchbar from '@/components/Searchbar'
+
 export default {
   name: 'HeroSection',
+  components: {
+    Searchbar
+  },
+  props: {
+    bg: String,
+    hasSearchBar: Boolean
+  },
   data() {
     return {
+      bgUrl: '/img/' + this.bg,
+
       videoId: '7Z0x-3UOw0E'
     }
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.hero {
-  background: url('../assets/img/HeroBG.jpg') center/cover no-repeat;
-
-  &.is-medium &-body {
-    padding: 0 1.5rem 12rem;
-  }
-}
-</style>

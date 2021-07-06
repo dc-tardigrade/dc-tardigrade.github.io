@@ -1,0 +1,59 @@
+.about-us {
+  padding-bottom: 0;
+
+  &__header {
+    margin-bottom: 5rem;
+  }
+
+  &__text {
+    margin: 0 auto 30px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  &__video {
+    max-width: 650px;
+    max-height: 365.625px;
+    width: 100%;
+    position: relative;
+    margin: 2rem auto 3rem;
+    border-radius: 8px;
+  }
+
+  &__key-figures {
+    padding: 20rem 5% 3rem;
+    margin-top: -20rem;
+    background-color: $primary;
+
+    .container {
+      margin: 0 auto;
+      display: flex;
+      column-gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__key-figure {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 0;
+    margin-bottom: 2rem;
+
+    @include until($tablet) {
+      flex: 50%;
+    }
+  }
+
+  &__key-number {
+    font-size: 6rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 0 #93A889;
+  }
+
+  &__key-text {
+    font-weight: bold;
+  }
+}

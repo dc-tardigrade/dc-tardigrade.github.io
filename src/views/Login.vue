@@ -29,7 +29,6 @@
 
 <script>
 import firebase from "firebase";
-import {mapActions} from 'vuex'
 
 export default {
   name: "Login",
@@ -41,19 +40,15 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['updateCurrentUser']),
     async login(e) {
       e.preventDefault()
 
       try {
-        const user = await firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        // console.log('user.user : ' + JSON.stringify(user.user, null, 4))
-        this.updateCurrentUser({
-          name: user.user.displayName,
-          email: user.user.email,
-          uid: user.user.uid,
+        await firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(response => {
+          localStorage.setItem('user', JSON.stringify(response.user))
+        }).then(() => {
+          this.$router.push('/')
         })
-        this.$router.push('/')
       } catch (error) {
         this.error = error
       }

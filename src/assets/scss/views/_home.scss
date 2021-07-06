@@ -1,0 +1,71 @@
+.home-about {
+  background-color: $green;
+  padding: 4rem 2rem;
+  color: $white;
+
+  &__title {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    color: $white;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    flex-basis: 66.66%;
+  }
+
+  &__text {
+    text-align: center;
+
+    strong {
+      color: #FFF;
+    }
+  }
+}
+
+.home-level-cta {
+  padding: 5rem 0;
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  &__intro {
+    color: $black;
+  }
+
+  &__content {
+    border-radius: 14px;
+    position: relative;
+    background: url('/img/home-level-cta-bg.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12rem 2.5rem;
+  }
+
+  &__content-overlay {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &__content-title {
+    text-align: center;
+    color: #FFF;
+    z-index: 1;
+    margin-bottom: 3rem;
+  }
+
+  .btn {
+    z-index: 1;
+  }
+}

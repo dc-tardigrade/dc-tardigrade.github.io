@@ -1,52 +1,52 @@
 .btn {
-    padding: 6px 20px;
-    font-weight: bold;
-    border-radius: 9999px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    text-transform: none;
-    font-size: 1.4rem;
-    cursor: pointer;
+  padding: 6px 20px;
+  font-weight: bold;
+  border-radius: 9999px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  text-transform: none;
+  font-size: 1.4rem;
+  cursor: pointer;
 
-    &--lg {
-        padding: 12px 50px;
-    }
+  &--lg {
+    padding: 12px 50px;
+  }
 
-    &-primary {
-        background: $primary;
-        color: $white;
-
-        &:hover {
-            color: $white;
-        }
-    }
-
-    &-white {
-        background: $white;
-        color: $primary;
-
-        &:hover {
-            color: $primary;
-        }
-    }
+  &-primary {
+    background: $primary;
+    color: $white;
 
     &:hover {
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+      color: $white;
     }
+  }
 
-    &-red {
-        background: $red;
-        color: $white !important;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-        transition: all .3s;
+  &-white {
+    background: $white;
+    color: $primary;
 
-        &:hover, &:focus {
-            background: 0 !important;
-            color: $red !important;
-            border-color: $red;
-        }
+    &:hover {
+      color: $primary;
     }
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &-red {
+    background: $red;
+    color: $white !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: all .3s;
+
+    &:hover, &:focus {
+      background: 0 !important;
+      color: $red !important;
+      border-color: $red;
+    }
+  }
 }
 
 button {
-    border: 0;
+  border: 0;
 }

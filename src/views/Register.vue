@@ -47,15 +47,9 @@ export default {
 
       // Auth request
 
-      const user = await firebase.auth()
+      await firebase.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          console.log('user: ' + user)
-          // firebase.database().ref("users").child(user.uid).set({
-          //   username: this.username,
-          //   email: user.email,
-          //   password: user.password
-          // })
           this.$router.replace({name: 'home'})
         }).catch(error => {
           this.error = error

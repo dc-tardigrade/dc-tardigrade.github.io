@@ -1,7 +1,7 @@
 <template>
-  <header class="has-bg-white">
+  <header>
     <div class="container">
-      <b-navbar class="is-white py-2">
+      <b-navbar class="py-2">
         <template #brand>
           <b-navbar-item tag="router-link" to="/">
             <svg xmlns="http://www.w3.org/2000/svg" class="logo" fill="none" viewBox="0 0 160 143">
@@ -17,13 +17,13 @@
         </template>
         <template #end>
           <b-navbar-item tag="router-link" to="/">
-            Accueil
-          </b-navbar-item>
-          <b-navbar-item tag="router-link" to="/">
             Nos stages
           </b-navbar-item>
+          <b-navbar-item tag="router-link" to="/blog">
+            Articles
+          </b-navbar-item>
           <b-navbar-item tag="router-link" to="/">
-            Promotions
+            Galerie
           </b-navbar-item>
           <b-navbar-item tag="router-link" to="/">
             À propos
@@ -31,61 +31,93 @@
           <b-navbar-item tag="router-link" to="/">
             Contact
           </b-navbar-item>
-          <b-navbar-item v-if="loggedIn" @click="signOut">
-            Déconnexion
+          <b-navbar-dropdown v-if="user.loggedIn" label="Mon Compte">
+            <b-navbar-item v-if="user.loggedIn" tag="router-link" to="/mon-compte">
+              Profil
+            </b-navbar-item>
+            <b-navbar-item v-if="user.loggedIn" @click="signOut">
+              Déconnexion
+            </b-navbar-item>
+          </b-navbar-dropdown>
+          <b-navbar-dropdown v-if="!user.loggedIn" label="Connexion">
+            <b-navbar-item @click="isLoginModalActive = true">
+              Connexion
+            </b-navbar-item>
+            <b-navbar-item @click="isRegisterModalActive = true">
+              Inscription
+            </b-navbar-item>
+          </b-navbar-dropdown>
+          <b-navbar-item class="btn btn-red" tag="router-link" to="/questionnaire">
+            Découvrir mon niveau
           </b-navbar-item>
-          <b-navbar-item v-if="loggedIn" class="btn btn-red" tag="router-link" to="/mon-compte">
-            Mon Compte
-          </b-navbar-item>
-          <b-navbar-item v-if="!loggedIn" class="btn btn-red" tag="router-link" to="/connexion">
-            Connexion
-          </b-navbar-item>
+          <b-modal
+              v-model="isLoginModalActive"
+              has-modal-card
+              trap-focus
+              :destroy-on-hide="false"
+              aria-role="dialog"
+              aria-label="Connexion"
+              aria-modal>
+            <template #default="props">
+              <LoginModal @close="props.close"></LoginModal>
+            </template>
+          </b-modal>
+          <b-modal
+              v-model="isRegisterModalActive"
+              has-modal-card
+              trap-focus
+              :destroy-on-hide="false"
+              aria-role="dialog"
+              aria-label="Inscription"
+              aria-modal>
+            <template #default="props">
+              <RegisterModal @close="props.close"></RegisterModal>
+            </template>
+          </b-modal>
         </template>
       </b-navbar>
     </div>
   </header>
-
 </template>
 
 <script>
 import firebase from 'firebase'
-import {mapActions} from "vuex";
+import {mapState, mapActions} from 'vuex'
+import LoginModal from '@/components/Auth/LoginModal'
+import RegisterModal from '@/components/Auth/RegisterModal'
 
 export default {
   name: 'Navbar',
+  components: {
+    LoginModal,
+    RegisterModal,
+  },
+  props: {
+    page: String
+  },
   data() {
     return {
-      loggedIn: false
+      isLoginModalActive: false,
+      isRegisterModalActive: false,
     }
   },
   methods: {
-    ...mapActions(['updateCurrentUser']),
+    ...mapActions(['setUser', 'fetchUser']),
     async signOut() {
-      const response = firebase.auth().signOut()
-        .then(() => {
-          this.$router.push('login')
-          console.log(response)
-        })
-        .catch(error => {
-          console.log(error)
-        })
+      firebase.auth().signOut()
+          .then(() => {
+            localStorage.setItem('user', null)
+            if (this.$route.name !== 'home')
+              this.$router.push('/')
+          })
+          .catch(error => {
+            console.log(error)
+          })
     }
   },
-  created() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        this.updateCurrentUser({
-          name: user.displayName,
-          email: user.email,
-          uid: user.uid,
-        })
-
-        this.loggedIn = true
-
-      } else {
-        this.loggedIn = false
-      }
-    })
+  computed: {
+    ...mapState(['user']),
   }
+
 }
 </script>

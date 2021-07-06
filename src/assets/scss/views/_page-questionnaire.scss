@@ -1,0 +1,14 @@
+.page-questionnaire {
+  &__header {
+    margin: 5rem 0;
+  }
+  .section-title {
+    text-transform: none;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}

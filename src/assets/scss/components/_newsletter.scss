@@ -1,23 +1,18 @@
 .newsletter {
-  background-color: #8ABDAD;
-  border-radius: 8px;
+  background-color: $lightgreen;
+  border-radius: 56px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 3rem;
-  padding: 4rem 2rem;
+  padding: 6rem 3rem;
 
-  .section-title {
-    color: $white;
+  &__title {
+    color: $primary;
     text-align: left;
     max-width: 30%;
     font-weight: bold;
-
-    @include until($desktop) {
-      max-width: 100%;
-      text-align: center;
-    }
   }
 
   .btn {
@@ -41,10 +36,6 @@
       border: none;
     }
 
-    @include from($tablet) {
-      min-width: 30rem;
-      width: 50%;
-    }
   }
 
   .control {
@@ -60,11 +51,29 @@
   }
 
   .is-valid {
-    outline: $success solid 2px;
+    outline: $primary solid 2px;
+  }
+
+  @include from($tablet) {
+    .email-input {
+      min-width: 30rem;
+      width: 50%;
+    }
   }
 
   @include until($desktop) {
     flex-direction: column;
+
+    &__title {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @include from($desktop) {
+    max-width: 80%;
+    margin: 0 auto;
   }
 
 

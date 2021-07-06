@@ -1,41 +1,81 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import firebase from "firebase";
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     user: {
-      name: '',
-      email: '',
-      password: '',
-      uid: '',
-    }
+      loggedIn: false,
+      data: null,
+      profile: null
+    },
+    articles: []
   },
   mutations: {
-    SET_USER (state, payload) {
-      return state.user = payload.user
+    SET_USER(state, payload) {
+      return state.user.data = payload
     },
-    UPDATE_USER_NAME (state, payload) {
-      return state.user.name = payload.name
+    SET_USER_PROFILE(state, payload) {
+      return state.user.profile = payload
     },
-    UPDATE_USER_EMAIL (state, payload) {
-      return state.user.email = payload.email
+    SET_LOGGED_IN(state, value) {
+      state.user.loggedIn = value
     },
-    UPDATE_USER_PASSWORD (state, payload) {
-      return state.user.password = payload.password
-    },
-    UPDATE_USER_UID (state, payload) {
-      return state.user.uid = payload.uid
+    SET_ARTICLES(state, payload) {
+      return state.articles = payload
     }
   },
   actions: {
-    updateCurrentUser(context, userObject) {
-      context.commit('UPDATE_USER_NAME', userObject)
-      context.commit('UPDATE_USER_EMAIL', userObject)
-      context.commit('UPDATE_USER_UID', userObject)
-      // context.commit('UPDATE_CURRENT_USER_PASSWORD', userObject)
+    setUser(context, user) {
+      if(user && Object.keys(user).length > 0) {
+         firebase.firestore().collection('users')
+           .doc(user.uid)
+           .onSnapshot((doc) => {
+             if (doc.exists) {
+                 context.commit('SET_USER_PROFILE', doc)
+             }
+           })
+
+        context.commit('SET_USER', user)
+        context.commit('SET_LOGGED_IN', true)
+      } else {
+        context.commit('SET_LOGGED_IN', false)
+      }
+      context.commit('SET_LOGGED_IN', true)
+      context.commit("SET_USER", user)
+      console.log(user)
+    },
+    fetchUser(context) {
+      // Check for auth
+      const user = firebase.auth().currentUser
+      if(user) {
+        firebase.firestore().collection('users')
+          .doc(user.uid)
+          .onSnapshot((doc) => {
+            if (doc.exists) {
+                context.commit('SET_USER_PROFILE', doc.data())
+            }
+          })
+        context.commit('SET_USER', user)
+        context.commit('SET_LOGGED_IN', true)
+      } else {
+        context.commit('SET_LOGGED_IN', false)
+      }
+    },
+    setUserProfile(context, userProfile) {
+      context.commit('SET_USER_PROFILE', userProfile)
+    },
+    updateArticles(context, articlesObject) {
+      context.commit('SET_ARTICLES', articlesObject)
+    },
+  },
+  getters: {
+    user(state) {
+      return state.user
     }
-  }
+  },
+
 })
 
 export default store

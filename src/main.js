@@ -7,8 +7,23 @@ import router from './router'
 import store from './store'
 import VueGtm from 'vue-gtm';
 import firebase from 'firebase/app';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import {
+  faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
+  faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
+  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload, faCalendarAlt, faStar
+} from "@fortawesome/free-solid-svg-icons";
 
-Vue.use(Buefy)
+library.add(faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
+  faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
+  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload, faCalendarAlt, faStar);
+Vue.component('vue-fontawesome', FontAwesomeIcon);
+
+Vue.use(Buefy, {
+  defaultIconComponent: 'vue-fontawesome',
+  defaultIconPack: 'fas',
+});
 
 Vue.use(VueGtm, {
   id: 'GTM-M84SHFZ',
@@ -37,16 +52,12 @@ firebase.initializeApp(firebaseConfig);
 
 Vue.config.productionTip = false
 
-let app;
+new Vue({
+  router,
+  store,
+  render: h => h(App),
+}).$mount('#app')
 
-firebase.auth().onAuthStateChanged(() => {
-  if(!app) {
-    app = new Vue({
-      router,
-      store,
-      render: h => h(App),
-    }).$mount('#app')
-  }
-})
+
 
 
