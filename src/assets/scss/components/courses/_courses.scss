@@ -1,4 +1,6 @@
 .course-locations {
+  margin-top: 6rem;
+
   .columns {
     flex-wrap: wrap;
   }
@@ -16,10 +18,6 @@
     padding: 2rem 0 1rem 1rem;
     border: none;
     margin-bottom: 3rem;
-  }
-
-  .tabs li {
-
   }
 
   .tabs a {

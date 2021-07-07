@@ -2,7 +2,6 @@
   <div class="course-locations">
     <div class="container">
       <h2 class="course-locations__title">Catalogue des stages</h2>
-
       <b-tabs v-model="activeTab">
         <b-tab-item v-for="category in categories" :label="category.name" :key="category.id">
           <div class="columns">
@@ -18,6 +17,9 @@
           </div>
         </b-tab-item>
       </b-tabs>
+      <div class="home-section-btn-container">
+        <router-link :to="{name: 'courses'}" class="btn btn-primary btn--lg">Toutes les offres</router-link>
+      </div>
     </div>
   </div>
 </template>

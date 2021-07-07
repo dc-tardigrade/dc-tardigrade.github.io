@@ -10,7 +10,7 @@
       <div class="article-preview__excerpt">
         <slot name="excerpt"></slot>
       </div>
-      <a :href="url" class="btn btn-primary">Lire la suite</a>
+      <a :href="url" class="article-preview__link">Lire la suite</a>
     </div>
   </article>
 </template>

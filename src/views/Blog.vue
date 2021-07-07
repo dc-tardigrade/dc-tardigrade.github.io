@@ -17,7 +17,7 @@
       </div>
       <div class="columns">
         <div class="blog__articles" v-for="article in articles" v-bind:key="article.guid">
-          <div class="column is-half-tablet">
+          <div class="column is-full-mobile is-one-third-tablet is-one-third-desktop">
             <ArticlePreview :url="article.guid">
               <template v-slot:title>{{ article.title }}</template>
               <template v-slot:excerpt><p v-html="article.description.substr(0, 100)"></p></template>
@@ -38,30 +38,14 @@ export default {
   components: {
     ArticlePreview
   },
-  data() {
-    return {
-      articlesList: [],
-    }
-  },
   computed: {
     ...mapState(['articles'])
   },
   mounted() {
-    this.getArticles()
+    this.fetchArticles()
   },
   methods: {
-    ...mapActions(['updateArticles']),
-    async getArticles() {
-      await window.axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nomad-survie', {}).then(response => {
-        this.articlesList = response.data.items
-        this.updateArticles(this.articlesList)
-        this.skeletonOn = false
-      })
-    }
+    ...mapActions(['fetchArticles']),
   },
 }
 </script>
-
-<style scoped>
-
-</style>

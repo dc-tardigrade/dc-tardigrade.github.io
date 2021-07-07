@@ -1,57 +1,86 @@
 <template>
   <div class="page home">
     <HeroSection bg="home-hero-bg.jpg" :hasSearchBar=true></HeroSection>
-    <div class="home-about">
-      <div class="container">
-        <div class="columns is-align-content-stretch">
-          <div class="column is-half">
-            <h2 class="home-about__title">Salut à toi, jeune survivaliste !<br/>Prêt à découvrir Nomad ?</h2>
-            <p class="home-about__text">
-              <strong>Nomad</strong> te propose de participer à des stages de survie uniques ! Des <strong>offres
-              personnalisées</strong> en fonction du milieu naturel, de la durée et du niveau d’expertise te sont
-              proposées. Le plus ? Tu es accompagné(e) par des<strong>survivalistes</strong> aux petits oignons
-              sélectionnés <strong>par nos soins !</strong> Véritables professionnels de la survie, ils te transmettront
-              leur savoir dans un milieu hostile et naturel pour que tu puisses survivre sans problème à la prochaine
-              attaque de zombies.
-            </p>
-            <router-link class="home-about__link" :to="{name: 'about'}">Qui sommes-nous &#129042;</router-link>
-          </div>
-          <div class="column is-half">
-            <figure class="home-about__image">
-              <img :src="require('@/assets/img/home-about.jpg')" alt="">
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
+    <HomeAbout></HomeAbout>
     <QuestionnaireCta></QuestionnaireCta>
     <CourseLocations></CourseLocations>
     <div class="container my-5">
-      <Banner class="banner" background="location_this_month.jpg"></Banner>
+      <Banner class="banner" background="location_this_month.jpg">
+        <template v-slot:title>La destination du mois</template>
+        <template v-slot:subtitle>Les Pyrénées</template>
+      </Banner>
     </div>
+    <div class="container">
+      <header class="home-section-header">
+        <h2 class="home-section-header__title">Nos articles</h2>
+        <p class="home-section-header__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consectetur
+          sollicitudin tincidunt. Aliquam erat volutpat. Integer volutpat, ligula ac tris.</p>
+      </header>
+      <div v-if="articles.length === 0">
+        <b-skeleton width="80%" :animated="true"></b-skeleton>
+        <b-skeleton width="60%" :animated="true"></b-skeleton>
+        <b-skeleton width="40%" :animated="true"></b-skeleton>
+        <b-skeleton width="50%" :animated="true"></b-skeleton>
+        <b-skeleton width="70%" :animated="true"></b-skeleton>
+        <b-skeleton width="90%" :animated="true"></b-skeleton>
+      </div>
+      <div v-else class="columns">
+        <div class="home-articles" v-for="article in articles" v-bind:key="article.guid">
+          <div class="column is-half-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
+            <ArticlePreview :url="article.guid">
+              <template v-slot:title>{{ article.title }}</template>
+              <template v-slot:excerpt><p v-html="article.description.substr(0, 100)"></p></template>
+            </ArticlePreview>
+          </div>
+        </div>
+      </div>
+      <div class="home-section-btn-container">
+        <router-link :to="{name: 'blog'}" class="btn btn-primary btn--lg">Consulter nos articles</router-link>
+      </div>
+    </div>
+    <div class="container">
+      <header class="home-section-header">
+        <h2 class="home-section-header__title">Galerie photos</h2>
+        <p class="home-section-header__intro">Ici, tu pourras observer des photos prises par d’autres stagiaires durant leurs stages. Tu pourras toi aussi partager tes propres photos une fois que tu auras sauté le pas. Prépares tes plus beaux clichés !</p>
+      </header>
+      <Gallery></Gallery>
+    </div>
+
     <Newsletter></Newsletter>
   </div>
 </template>
 
 <script>
-import HeroSection from "@/components/HeroSection";
-import QuestionnaireCta from "@/components/QuestionnaireCta";
-import Banner from "@/components/Banner";
-import CourseLocations from "@/components/Courses/CourseLocations";
-import Newsletter from "@/components/Newsletter";
+import HeroSection from "@/components/HeroSection"
+import HomeAbout from "@/components/Home/HomeAbout"
+import QuestionnaireCta from "@/components/QuestionnaireCta"
+import Banner from "@/components/Banner"
+import CourseLocations from "@/components/Courses/CourseLocations"
+import Newsletter from "@/components/Newsletter"
+import Gallery from "@/components/Gallery"
+import ArticlePreview from "@/components/ArticlePreview"
+import {mapState, mapActions} from 'vuex'
 
 export default {
   name: "Home",
   components: {
     HeroSection,
+    HomeAbout,
     QuestionnaireCta,
     Banner,
     CourseLocations,
-    Newsletter
+    ArticlePreview,
+    Gallery,
+    Newsletter,
   },
+  computed: {
+    ...mapState(['articles'])
+  },
+  methods: {
+    ...mapActions(['fetchArticles'])
+  },
+  mounted() {
+    this.fetchArticles()
+  }
 }
 </script>
-
-<style scoped>
-
-</style>

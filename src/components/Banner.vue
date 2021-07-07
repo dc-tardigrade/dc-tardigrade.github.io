@@ -1,10 +1,17 @@
 <template>
   <article :class="'banner' + sizeClass" :style="{ backgroundImage: `url('/img/${background}')` }">
     <div class="banner__overlay"></div>
-    <h3 class="banner__title">
-      A toi de jouer !<br/>Sportif du dimanche ou pro de la survie ?
-    </h3>
-    <router-link class="btn btn-primary btn--lg" to="/questionnaire">Lancer le questionnaire</router-link>
+    <div class="banner__header">
+      <div class="banner__content">
+        <h3 class="banner__title">
+          <slot name="title"></slot>
+        </h3>
+        <p class="banner__subtitle">
+          <slot name="subtitle"></slot>
+        </p>
+      </div>
+    </div>
+    <slot name="button"></slot>
   </article>
 </template>
 

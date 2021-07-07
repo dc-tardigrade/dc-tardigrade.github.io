@@ -10,10 +10,10 @@
 
 <script>
 import HeroSection from '@/components/HeroSection'
-import AboutUs from '@/components/AboutUs'
+import AboutUs from '@/components/Landing/AboutUs'
+import Benefits from '@/components/Landing/Benefits'
 import OurCourses from '@/components/Courses/OurCourses'
 import Newsletter from '@/components/Newsletter'
-import Benefits from '@/components/Benefits'
 
 export default {
   name: 'Home',

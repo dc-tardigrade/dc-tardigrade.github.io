@@ -1,7 +1,14 @@
 .page-questionnaire {
   &__header {
-    margin: 5rem 0;
+    padding: 5rem 0;
+    background: $green;
+    margin-bottom: 3rem;
   }
+
+  .section-title, .section-subtitle {
+    color: #FFF;
+  }
+
   .section-title {
     text-transform: none;
     margin-bottom: 1rem;

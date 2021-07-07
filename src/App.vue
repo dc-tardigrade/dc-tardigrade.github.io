@@ -21,7 +21,7 @@ export default {
     Footer
   },
   methods: {
-    ...mapActions(['fetchUser', 'setUser'])
+    ...mapActions(['fetchUser'])
   },
   mounted() {
     firebase.auth().onAuthStateChanged(() => {

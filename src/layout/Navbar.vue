@@ -102,7 +102,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setUser', 'fetchUser']),
+    ...mapActions(['fetchUser']),
     async signOut() {
       firebase.auth().signOut()
           .then(() => {

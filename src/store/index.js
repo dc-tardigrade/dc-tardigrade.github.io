@@ -27,34 +27,15 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    setUser(context, user) {
-      if(user && Object.keys(user).length > 0) {
-         firebase.firestore().collection('users')
-           .doc(user.uid)
-           .onSnapshot((doc) => {
-             if (doc.exists) {
-                 context.commit('SET_USER_PROFILE', doc)
-             }
-           })
-
-        context.commit('SET_USER', user)
-        context.commit('SET_LOGGED_IN', true)
-      } else {
-        context.commit('SET_LOGGED_IN', false)
-      }
-      context.commit('SET_LOGGED_IN', true)
-      context.commit("SET_USER", user)
-      console.log(user)
-    },
     fetchUser(context) {
       // Check for auth
       const user = firebase.auth().currentUser
-      if(user) {
+      if (user) {
         firebase.firestore().collection('users')
           .doc(user.uid)
           .onSnapshot((doc) => {
             if (doc.exists) {
-                context.commit('SET_USER_PROFILE', doc.data())
+              context.commit('SET_USER_PROFILE', doc.data())
             }
           })
         context.commit('SET_USER', user)
@@ -66,9 +47,17 @@ const store = new Vuex.Store({
     setUserProfile(context, userProfile) {
       context.commit('SET_USER_PROFILE', userProfile)
     },
-    updateArticles(context, articlesObject) {
+    setArticles(context, articlesObject) {
       context.commit('SET_ARTICLES', articlesObject)
     },
+    fetchArticles(context) {
+      if(this.state.articles.length === 0) {
+        window.axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nomad-survie', {})
+          .then(response => {
+            context.commit('SET_ARTICLES', response.data.items)
+          })
+      }
+    }
   },
   getters: {
     user(state) {
