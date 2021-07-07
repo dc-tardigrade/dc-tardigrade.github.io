@@ -2,4 +2,43 @@
   .columns {
     flex-wrap: wrap;
   }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  .tabs {
+    font-size: 1.6rem;
+  }
+
+  .tabs ul {
+    column-gap: 1rem;
+    padding: 2rem 0 1rem 1rem;
+    border: none;
+    margin-bottom: 3rem;
+  }
+
+  .tabs li {
+
+  }
+
+  .tabs a {
+    border-radius: 10px;
+    font-weight: bold;
+    padding: .8rem 1.6rem;
+    font-size: 1.6rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    color: $primary;
+    border: none;
+  }
+
+  .b-tabs .tab-content {
+    padding: 0;
+  }
+
+  .tabs li.is-active a {
+    border-bottom: 0;
+    background: $primary;
+    color: $white;
+  }
 }

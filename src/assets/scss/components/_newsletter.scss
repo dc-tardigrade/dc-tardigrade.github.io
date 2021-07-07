@@ -7,6 +7,7 @@
   align-items: center;
   column-gap: 3rem;
   padding: 6rem 3rem;
+  margin-top: 5rem;
 
   &__title {
     color: $primary;
@@ -73,7 +74,8 @@
 
   @include from($desktop) {
     max-width: 80%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 

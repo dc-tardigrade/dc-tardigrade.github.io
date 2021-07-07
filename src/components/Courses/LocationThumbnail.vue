@@ -4,7 +4,7 @@
       <img :src="require(`@/assets/img/${background}`)" alt="Stage">
     </div>
     <b-taglist class="location-thumbnail__meta">
-      <b-tag type="is-white" size="is-large" class="location-thumbnail__rating">
+      <b-tag type="is-white" size="is-large" class="data-tag data-tag--white">
         <slot name="rating"></slot>
         <b-icon class="location-thumbnail__rating-icon" icon="star"></b-icon>
       </b-tag>

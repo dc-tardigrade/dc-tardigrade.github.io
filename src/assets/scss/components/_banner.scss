@@ -1,0 +1,36 @@
+.banner {
+  border-radius: 14px;
+  position: relative;
+  background-position: center/cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 6rem 2.5rem;
+
+  &--lg {
+    padding: 12rem 2.5rem;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &__title {
+    text-align: center;
+    color: #FFF;
+    z-index: 1;
+    margin-bottom: 3rem;
+  }
+
+  .btn {
+    z-index: 1;
+  }
+}

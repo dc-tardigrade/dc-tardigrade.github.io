@@ -1,6 +1,8 @@
 <template>
   <div class="course-locations">
     <div class="container">
+      <h2 class="course-locations__title">Catalogue des stages</h2>
+
       <b-tabs v-model="activeTab">
         <b-tab-item v-for="category in categories" :label="category.name" :key="category.id">
           <div class="columns">

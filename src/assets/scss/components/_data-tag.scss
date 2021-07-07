@@ -1,0 +1,16 @@
+.data-tag {
+  border-radius: 10px;
+  font-weight: bold;
+  padding: .8rem 1.6rem;
+  font-size: 1.6rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+  &--white {
+    color: $primary;
+  }
+
+  &--primary {
+    background: $primary;
+    color: $white;
+  }
+}

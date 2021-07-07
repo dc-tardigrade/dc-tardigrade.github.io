@@ -1,6 +1,6 @@
 <template>
-  <div class="container is-fluid mt-5">
-    <section class="newsletter">
+  <div class="container is-fluid">
+    <article class="newsletter">
       <h2 class="newsletter__title">Inscrivez-vous à notre Newsletter !</h2>
       <div id="mc_embed_signup">
         <form action="https://gmail.us6.list-manage.com/subscribe/post?u=cd84f9cb568c203486a6a0aee&amp;id=dd5fa74acd"
@@ -25,7 +25,7 @@
         </form>
       </div>
       <!--End mc_embed_signup-->
-    </section>
+    </article>
   </div>
 </template>
 
