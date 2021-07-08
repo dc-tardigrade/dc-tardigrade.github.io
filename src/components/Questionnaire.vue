@@ -1,18 +1,27 @@
 <template>
   <div class="questionnaire">
-    <div class="questionnaire__question">{{ questions[currQuestion].text }}</div>
-    <div class="questionnaire__answers">
-      <div class="questionnaire__answer"
-           v-for="answer in questions[currQuestion].answers"
-           :key="answer.id"
-           @click="nextQuestion(answer)">
-        {{ answer.text }}
+    <div v-if="!isQuestionnaireDone" class="questionnaire__content">
+      <div class="questionnaire__question">{{ questions[currQuestion].text }}</div>
+      <div class="questionnaire__answers">
+        <div class="questionnaire__answer"
+             v-for="answer in questions[currQuestion].answers"
+             :key="answer.id"
+             @click="nextQuestion(answer)">
+          {{ answer.text }}
+        </div>
+      </div>
+      <div>
+        <b-progress type="is-primary"
+                    :value="(userAnswers.length / questions.length)*100"
+                    size="is-large"
+                    class="questionnaire__progress">
+        </b-progress>
       </div>
     </div>
-    <div>
-      <b-progress type="is-primary" :value="(userAnswers.length / questions.length)*100" size="is-large"
-                  class="questionnaire__progress"></b-progress>
-      {{ userAnswers }}
+    <div v-else class="questionnaire__result">
+      <h2 class="questionnaire__result-title">{{ userLevel.name }}</h2>
+      <p class="questionnaire__result-subtitle">34% des participants ont le meme niveau que toi !</p>
+      <p class="questionnaire__result-text">{{ userLevel.text }}</p>
     </div>
   </div>
 </template>
@@ -23,33 +32,56 @@ export default {
   methods: {
     nextQuestion(answer) {
       this.userAnswers.push(answer)
-      this.currQuestion = this.currQuestion < this.questions.length - 1 ? this.currQuestion + 1 : 0
-      this.showResult()
+      if (this.currQuestion < this.questions.length - 1) {
+        this.currQuestion++
+      } else {
+        this.showResult()
+      }
     },
     showResult() {
-
+      this.isQuestionnaireDone = true
+      let userAnswerLevelCounts = []
+      this.levels.forEach(level => {
+        userAnswerLevelCounts.push({
+          id: level.id,
+          count: this.userAnswers.filter((answer) => answer.level === level.id).length
+        })
+      })
+      let maxAnswerLevelCount = Math.max.apply(Math, userAnswerLevelCounts.map(function (level) {
+        return level.count;
+      }))
+      let answerLevel = userAnswerLevelCounts.find(function (level) {
+        return level.count === maxAnswerLevelCount;
+      })
+      this.userLevel = this.levels.find(level => level.id === answerLevel.id)
     }
   },
   data() {
     return {
       showClickedAnswer: true,
+      isQuestionnaireDone: false,
       userAnswers: [],
+      userLevel: {},
       levels: [
         {
           id: 0,
           name: 'Sportif du dimanche',
+          text: 'T’es pas le meilleur de ta catégorie, on doit se le dire... mais on t’a concocté un programme exprès pour toi, normalement réservé aux enfants mais on va faire une exception ! Rejoins-nous !'
         },
         {
           id: 1,
           name: 'Amateur',
+          text: 'Bon ok t’as regardé quelques séries sur la survie mais t’as dû louper quelques épisodes... Rejoins-nous pour la suite de la saison et tu seras à jour !'
         },
         {
           id: 2,
           name: 'Semi-pro',
+          text: 'Franchement t’es chaud mais y a encore un écart entre Bear Grylls et toi. Viens nous voir et on se regardera quelques épisodes de Man VS Wild en version grandeur nature !'
         },
         {
           id: 3,
           name: 'Élite',
+          text: 'Terminator, c’est toi ? On a rien à redire sur ton niveau, on a hâte de voir ça sur le terrain !'
         },
       ],
       currQuestion: 0,

@@ -1,5 +1,10 @@
 .questionnaire {
   &__question {
+    min-height: 13rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     padding: 1.5rem;
     text-align: center;
     font-size: 3.2rem;
@@ -13,10 +18,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
+    min-height: 20rem;
   }
 
   &__answer {
     padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     border: 1px solid $black;
     border-radius: 10px;
@@ -38,5 +47,30 @@
   &__progress {
     margin: 6rem auto 0;
     max-width: 80%;
+  }
+
+  &__result {
+    padding: 3rem;
+    background: $green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    &-title, &-subtitle, &-text {
+      color: #FFF;
+    }
+
+    &-title {
+      font-weight: bold;
+    }
+
+    &-subtitle {
+      font-weight: bold;
+    }
+
+    &-text {
+      margin-top: 3rem;
+    }
   }
 }
