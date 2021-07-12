@@ -54,3 +54,15 @@
 .progress.is-large, .is-large.progress-wrapper.is-not-native {
   height: 2.4rem
 }
+
+.carousel-arrow .icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  //display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-arrow .svg-inline--fa.fa-w-8 {
+  width: 1rem;
+}

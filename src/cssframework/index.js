@@ -6,12 +6,12 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {
   faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
   faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
-  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload, faCalendarAlt, faStar
+  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload, faCalendarAlt, faStar, faHeart
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
   faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
-  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload, faCalendarAlt, faStar);
+  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload, faCalendarAlt, faStar, faHeart);
 Vue.component('vue-fontawesome', FontAwesomeIcon);
 
 Vue.use(Buefy, {

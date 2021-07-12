@@ -15,10 +15,11 @@
         <b-skeleton width="70%" :animated="true"></b-skeleton>
         <b-skeleton width="90%" :animated="true"></b-skeleton>
       </div>
-      <div class="columns">
-        <div class="blog__articles" v-for="article in articles" v-bind:key="article.guid">
-          <div class="column is-full-mobile is-one-third-tablet is-one-third-desktop">
-            <ArticlePreview :url="article.guid">
+      <div class="blog__articles">
+        <div class="columns">
+          <div v-for="article in articles" v-bind:key="article.guid"
+               class="column is-full-mobile is-one-third-tablet is-one-third-desktop">
+            <ArticlePreview :url="article.guid" :thumbnail="article.thumbnail">
               <template v-slot:title>{{ article.title }}</template>
               <template v-slot:excerpt><p v-html="article.description.substr(0, 100)"></p></template>
             </ArticlePreview>

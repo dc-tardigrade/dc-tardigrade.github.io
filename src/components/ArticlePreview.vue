@@ -1,7 +1,7 @@
 <template>
   <article class="article-preview">
     <div class="article-preview__thumbnail">
-      <img :src="require(`@/assets/img/HeroBG.jpg`)" alt="Illustration de l'article">
+      <img :src="thumbnail" alt="Illustration de l'article">
     </div>
     <div class="article-preview__content">
       <h2 class="article-preview__title h3">
@@ -19,7 +19,8 @@
 export default {
   name: "ArticlePreview",
   props: {
-    url: String
+    url: String,
+    thumbnail: String
   },
 }
 </script>

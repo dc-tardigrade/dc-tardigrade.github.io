@@ -1,19 +1,18 @@
 .newsletter {
-  background-color: $lightgreen;
-  border-radius: 56px;
+  background-color: $water;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   column-gap: 3rem;
-  padding: 6rem 3rem;
+  padding: 4rem 3rem;
   margin-top: 5rem;
 
   &__title {
-    color: $primary;
-    text-align: left;
-    max-width: 30%;
+    color: #fff;
+    text-align: center;
     font-weight: bold;
+    margin-bottom: 2rem;
   }
 
   .btn {
@@ -24,7 +23,7 @@
   .email-input {
     margin: 0 auto;
     font-size: 1.6rem;
-    border-radius: 14px;
+    border-radius: 30px;
     border: 0;
     box-shadow: none;
 
@@ -44,7 +43,10 @@
     background: $white;
     border-radius: 14px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    margin: 0;
   }
 
   .is-invalid {
@@ -55,9 +57,35 @@
     outline: $primary solid 2px;
   }
 
+  //@include mobile {
+  //  .control {
+  //    flex-direction: column;
+  //    align-items: stretch;
+  //    width: 100%;
+  //  }
+  //
+  //  .email-input {
+  //    text-align: center;
+  //  }
+  //}
+
+  .newsletter {
+
+  }
+
+  &__form {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include until($tablet) {
+    &__form {
+      width: 95%;
+    }
+  }
+
   @include from($tablet) {
-    .email-input {
-      min-width: 30rem;
+    &__form {
       width: 50%;
     }
   }
@@ -70,13 +98,27 @@
       text-align: center;
       margin-bottom: 1rem;
     }
+
+    .email-input {
+      width: 80%;
+      margin: 0;
+    }
   }
 
   @include from($desktop) {
-    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-  }
 
+    align-items: center;
+    justify-content: center;
+
+    &__form {
+      margin: 0;
+      width: 100%;
+    }
+    .email-input {
+      min-width: 30rem;
+    }
+  }
 
 }

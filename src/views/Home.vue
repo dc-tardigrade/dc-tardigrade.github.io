@@ -3,8 +3,8 @@
     <HeroSection bg="home-hero-bg.jpg" :hasSearchBar=true></HeroSection>
     <HomeAbout></HomeAbout>
     <QuestionnaireCta></QuestionnaireCta>
-    <CourseLocations></CourseLocations>
-    <div class="container my-5">
+    <CourseLocations :hasTabs="true" :hasSwiper="true" title="Catalogue des stages" :hasButton="true"></CourseLocations>
+    <div class="container">
       <Banner class="banner" background="location_this_month.jpg">
         <template v-slot:title>La destination du mois</template>
         <template v-slot:subtitle>Les Pyrénées</template>
@@ -24,14 +24,13 @@
         <b-skeleton width="70%" :animated="true"></b-skeleton>
         <b-skeleton width="90%" :animated="true"></b-skeleton>
       </div>
-      <div v-else class="columns">
-        <div class="home-articles" v-for="article in articles" v-bind:key="article.guid">
-          <div class="column is-half-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
-            <ArticlePreview :url="article.guid">
-              <template v-slot:title>{{ article.title }}</template>
-              <template v-slot:excerpt><p v-html="article.description.substr(0, 100)"></p></template>
-            </ArticlePreview>
-          </div>
+      <div class="columns">
+        <div v-for="article in articles" v-bind:key="article.guid"
+             class="column is-full-mobile is-one-third-tablet is-one-third-desktop">
+          <ArticlePreview :url="article.guid" :thumbnail="article.thumbnail">
+            <template v-slot:title>{{ article.title }}</template>
+            <template v-slot:excerpt><p v-html="article.description.substr(0, 100)"></p></template>
+          </ArticlePreview>
         </div>
       </div>
       <div class="home-section-btn-container">
@@ -41,12 +40,13 @@
     <div class="container">
       <header class="home-section-header">
         <h2 class="home-section-header__title">Galerie photos</h2>
-        <p class="home-section-header__intro">Ici, tu pourras observer des photos prises par d’autres stagiaires durant leurs stages. Tu pourras toi aussi partager tes propres photos une fois que tu auras sauté le pas. Prépares tes plus beaux clichés !</p>
+        <p class="home-section-header__intro">Ici, tu pourras observer des photos prises par d’autres stagiaires durant
+          leurs stages. Tu pourras toi aussi partager tes propres photos une fois que tu auras sauté le pas. Prépares
+          tes plus beaux clichés !</p>
       </header>
       <Gallery></Gallery>
     </div>
 
-    <Newsletter></Newsletter>
   </div>
 </template>
 
@@ -56,7 +56,6 @@ import HomeAbout from "@/components/Home/HomeAbout"
 import QuestionnaireCta from "@/components/QuestionnaireCta"
 import Banner from "@/components/Banner"
 import CourseLocations from "@/components/Courses/CourseLocations"
-import Newsletter from "@/components/Newsletter"
 import Gallery from "@/components/Gallery"
 import ArticlePreview from "@/components/ArticlePreview"
 import {mapState, mapActions} from 'vuex'
@@ -71,7 +70,6 @@ export default {
     CourseLocations,
     ArticlePreview,
     Gallery,
-    Newsletter,
   },
   computed: {
     ...mapState(['articles'])

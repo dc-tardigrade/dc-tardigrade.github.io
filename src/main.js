@@ -20,6 +20,10 @@ window.axios = axios
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
+window.axeptioSettings = {
+  clientId: "5c11ff5ce95cd64112feab79",
+};
+
 const firebaseConfig = {
   apiKey: "AIzaSyC4x3-Mt3WGQ6LO0guOTpQXNHVvwOELomM",
   authDomain: "nomad-316318.firebaseapp.com",

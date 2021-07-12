@@ -1,12 +1,11 @@
 .footer {
-  margin-top: 50px;
-  color: #FFF;
+  color: #fff;
   padding: 2rem 0;
+  background: $primary;
 
   .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     row-gap: 1rem;
   }
@@ -54,7 +53,23 @@
   }
 
   &__link {
-    color: #FFF;
+    color: #fff;
     font-weight: bold;
+  }
+
+  svg path {
+    fill: #fff;
+  }
+
+  @include mobile {
+    &__copyright {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: .8rem;
+    }
+    .separator {
+      display: none;
+    }
   }
 }

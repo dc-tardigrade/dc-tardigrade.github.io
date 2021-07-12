@@ -46,4 +46,8 @@
       box-shadow: none;
     }
   }
+
+  @include until($tablet) {
+    display: none;
+  }
 }

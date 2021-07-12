@@ -50,27 +50,37 @@
   }
 
   &__result {
-    padding: 3rem;
-    background: $green;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 
-    &-title, &-subtitle, &-text {
-      color: #FFF;
+    &__icon {
+      width: 9rem;
+      height: 9rem;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
     &-title {
+      margin-top: 1rem;
       font-weight: bold;
+      font-size: 3.2rem;
     }
 
     &-subtitle {
-      font-weight: bold;
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: $black;
+      margin: 0 0 .5rem 0;
     }
 
     &-text {
-      margin-top: 3rem;
+      margin-bottom: 3rem;
+      color: $black;
     }
   }
 }

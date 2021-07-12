@@ -2,7 +2,7 @@
   <div class="home-about">
     <div class="container">
       <div class="columns is-align-content-stretch">
-        <div class="column is-half">
+        <div class="column is-half home-about__left">
           <h2 class="home-about__title">Salut à toi, jeune survivaliste !<br/>Prêt à découvrir Nomad ?</h2>
           <p class="home-about__text">
             <strong>Nomad</strong> te propose de participer à des stages de survie uniques ! Des <strong>offres
@@ -14,7 +14,7 @@
           </p>
           <router-link class="home-about__link" :to="{name: 'about'}">Qui sommes-nous &#129042;</router-link>
         </div>
-        <div class="column is-half">
+        <div class="column is-half home-about__right">
           <figure class="home-about__image">
             <img :src="require('@/assets/img/home-about.jpg')" alt="">
           </figure>

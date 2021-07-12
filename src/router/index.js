@@ -66,6 +66,13 @@ const routes = [
     }
   },
   {
+    path: '/stages',
+    name: 'courses',
+    components: {
+      default: () => import(/* webpackChunkName: "courses" */ '../views/CoursesView.vue')
+    }
+  },
+  {
     path: '/questionnaire',
     name: 'questionnaire',
     components: {

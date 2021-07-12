@@ -23,7 +23,7 @@
     position: relative;
     border: 2px solid transparent;
 
-    &::after {
+    &:not(.has-dropdown)::after {
       content: '';
       display: block;
       position: absolute;
